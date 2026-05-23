@@ -230,11 +230,13 @@ body.dark-mode .view-btn.active-view {
 
 .card-branding-shield {
     background-color: #E2E8F0;
-    height: 80px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
+    width: 100%;
+    overflow: hidden;
 }
 
 body.dark-mode .card-branding-shield {
@@ -243,8 +245,10 @@ body.dark-mode .card-branding-shield {
 }
 
 .logo-fallback-svg {
-    width: 36px;
-    height: 36px;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
 .card-text-details {
@@ -375,7 +379,7 @@ footer {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.contact-details-block h3 {
+.contact-details-block h2 {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }

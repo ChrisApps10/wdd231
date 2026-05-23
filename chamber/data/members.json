@@ -2,28 +2,28 @@
   "members": [
     {
       "name": "Los Angeles Tech Solutions",
-      "address": "555 S Flower St, Los Angeles, CA 90071",
+      "address": "350 S Bixel St, Los Angeles, CA 90017",
       "phone": "(213) 555-0101",
-      "website": "https://example.com",
-      "image": "images/member1.png",
+      "website": "https://lotechsolutions.org",
+      "image": "member1.jpg",
       "membershipLevel": 3,
       "tagline": "Innovative IT Infrastructure for Growing Enterprises"
     },
     {
-      "name": "Angel City Brews & Cafe",
+      "name": "Angel City Cafe",
       "address": "789 Sunset Blvd, Los Angeles, CA 90028",
       "phone": "(323) 555-0144",
-      "website": "https://example.com",
-      "image": "images/member2.png",
+      "website": "https://angelcitycafe.com",
+      "image": "member2.jpg",
       "membershipLevel": 1,
-      "tagline": "Organic Blends and Dedicated Community Spaces"
+      "tagline": "Organic Juice and Dedicated Community Spaces"
     },
     {
       "name": "Pacific Coast Marketing",
       "address": "1010 Wilshire Blvd, Los Angeles, CA 90017",
       "phone": "(213) 555-0182",
-      "website": "https://example.com",
-      "image": "images/member3.png",
+      "website": "https://pacificcoastmarketing.net",
+      "image": "member3.jpg",
       "membershipLevel": 2,
       "tagline": "Maximizing Regional Brand Visibility Digitally"
     },
@@ -31,8 +31,8 @@
       "name": "SoCal Corporate Legal Group",
       "address": "444 S Flower St, Los Angeles, CA 90071",
       "phone": "(213) 555-0199",
-      "website": "https://example.com",
-      "image": "images/member4.png",
+      "website": "https://socalcorporatelegal.com",
+      "image": "member4.jpg",
       "membershipLevel": 3,
       "tagline": "Dedicated Corporate and Non-Profit Business Counsel"
     },
@@ -40,8 +40,8 @@
       "name": "Metro Green Logistics",
       "address": "2200 E Olympic Blvd, Los Angeles, CA 90021",
       "phone": "(323) 555-0123",
-      "website": "https://example.com",
-      "image": "images/member5.png",
+      "website": "https://metrogreenlogistics.com",
+      "image": "member5.jpg",
       "membershipLevel": 1,
       "tagline": "Eco-Friendly Supply Chain Fleet Management"
     },
@@ -49,8 +49,8 @@
       "name": "Horizon Wealth Management",
       "address": "800 W 6th St, Los Angeles, CA 90017",
       "phone": "(213) 555-0155",
-      "website": "https://example.com",
-      "image": "images/member6.png",
+      "website": "https://horizonwealthla.com",
+      "image": "member6.jpg",
       "membershipLevel": 2,
       "tagline": "Financial Consulting Built on Long-Term Trust"
     },
@@ -58,8 +58,8 @@
       "name": "Griffith Architectural Design",
       "address": "1901 Avenue of the Stars, Los Angeles, CA 90067",
       "phone": "(310) 555-0177",
-      "website": "https://example.com",
-      "image": "images/member7.png",
+      "website": "https://griffitharchitecture.design",
+      "image": "member7.jpg",
       "membershipLevel": 3,
       "tagline": "Contemporary Spaces Built with Historic Integrity"
     }

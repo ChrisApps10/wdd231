@@ -54,13 +54,7 @@ function generateDirectoryLayout(memberCollectionArray) {
         
         itemCard.innerHTML = `
             <div class="card-branding-shield">
-                <svg class="logo-fallback-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                    <line x1="9" y1="22" x2="9" y2="16"></line>
-                    <line x1="15" y1="22" x2="15" y2="16"></line>
-                    <line x1="9" y1="16" x2="15" y2="16"></line>
-                    <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01"></path>
-                </svg>
+                <img src="images/${business.image}" alt="${business.name} Logo Illustration" loading="lazy" class="logo-fallback-svg">
             </div>
             <div class="card-text-details">
                 <h3>${business.name}</h3>
