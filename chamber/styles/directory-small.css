@@ -150,12 +150,14 @@ body.dark-mode #themeToggle .icon-svg-ui {
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.directory-control-bar h2 {
+.directory-control-bar h1, .directory-control-bar h2 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-body.dark-mode .directory-control-bar h2 {
+body.dark-mode .directory-control-bar h1, body.dark-mode .directory-control-bar h2 {
     color: #38BDF8;
 }
 
@@ -421,4 +423,12 @@ footer {
 
 .footer-metadata-row p {
     margin: 0.5rem 0;
+}
+
+.audit-preload-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
 }
