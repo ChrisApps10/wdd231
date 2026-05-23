@@ -15,8 +15,8 @@
         box-sizing: border-box;
     }
 
-    .branding-box h1 {
-        font-size: 1.4rem;
+    .branding-box h1, .branding-box h2 {
+    font-size: 1.4rem;
     }
 
     .header-controls {
