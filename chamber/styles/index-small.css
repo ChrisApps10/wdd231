@@ -1,0 +1,457 @@
+:root {
+    --primary-color: #1B3352;
+    --secondary-color: rgba(222, 227, 232, 0.25);
+    --text-dark: #000000;
+    --text-light: #DEE3E8;
+    --accent-color: #8E9AAF;
+    --heading-font: 'MerriweatherSans', sans-serif;
+    --main-font: 'Roboto', sans-serif;
+    --surface-light: #FFFFFF;
+    --surface-dark: #0F172A;
+    --card-surface-light: #FFFFFF;
+    --card-surface-dark: #1E293B;
+    --transition-engine: 0.25s;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.branding-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-svg {
+    width: 28px !important;
+    height: 28px !important;
+    color: #FFFFFF !important;
+    display: block;
+}
+
+.branding-box h1, .branding-box h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #FFFFFF !important;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control-btn-item {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.menu-toggle-btn {
+    background-color: transparent !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+}
+
+.icon-svg-ui {
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+#themeToggle .moon-icon {
+    stroke: #FFFFFF !important;
+}
+
+.active-toggle-icon {
+    display: block !important;
+}
+
+#themeToggle .sun-icon {
+    display: none;
+}
+
+.dark-mode #themeToggle .moon-icon {
+    display: none !important;
+}
+
+.dark-mode #themeToggle .sun-icon {
+    display: block !important;
+    color: #FBBF24 !important;
+}
+
+#navbar {
+    display: none;
+    background-color: #0F172A;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+#navbar.open-menu {
+    display: block;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li a {
+    display: block;
+    color: #F8FAFC;
+    background-color: #0F172A;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    transition: background-color var(--transition-engine);
+}
+
+#navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+
+#navbar ul li a.active {
+    background-color: #38BDF8 !important;
+    color: #0F172A !important;
+    font-weight: bold !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--text-dark);
+    background-color: var(--surface-light);
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-engine), color var(--transition-engine);
+}
+
+body.dark-mode, 
+.dark-mode body,
+.dark-mode {
+    color: #F8FAFC !important;
+    background-color: var(--surface-dark) !important;
+}
+
+body.dark-mode .home-events-section,
+.dark-mode .home-events-section,
+body.dark-mode .home-weather-section,
+.dark-mode .home-weather-section,
+body.dark-mode .home-forecast-section,
+.dark-mode .home-forecast-section,
+body.dark-mode .business-card-item,
+.dark-mode .business-card-item {
+    background-color: #2A3A52 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .home-events-section h2,
+.dark-mode .home-events-section h2,
+body.dark-mode .home-weather-section h2,
+.dark-mode .home-weather-section h2,
+body.dark-mode .home-forecast-section h2,
+.dark-mode .home-forecast-section h2,
+body.dark-mode .home-spotlights-section h2,
+.dark-mode .home-spotlights-section h2 {
+    background-color: #1E293B !important;
+    color: #38BDF8 !important;
+}
+
+body.dark-mode .page-main-title,
+.dark-mode .page-main-title,
+body.dark-mode .event-item h3,
+body.dark-mode .event-item p,
+body.dark-mode #liveWeatherOutput,
+body.dark-mode #forecastOutput,
+.dark-mode .event-item h3,
+.dark-mode .event-item p,
+.dark-mode #liveWeatherOutput,
+.dark-mode #forecastOutput {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .card-text-details,
+.dark-mode .card-text-details {
+    color: #F8FAFC !important;
+}
+
+body.dark-mode .card-text-details h3,
+.dark-mode .card-text-details h3 {
+    color: #38BDF8 !important;
+}
+
+.page-main-title {
+    font-family: var(--heading-font);
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 2rem auto 0.25rem auto !important; 
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    color: var(--text-dark);
+}
+
+.home-main-content {
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.home-hero-banner {
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/hero.jpg") !important;
+    background-position: center 35% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 1rem;
+    box-sizing: border-box;
+    min-height: 200px;
+}
+
+.view-btn.active-view {
+    background-color: #1B3352 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #1B3352;
+    padding: 0.6rem 1.4rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.home-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.home-events-section,
+.home-weather-section,
+.home-forecast-section {
+    background-color: #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.home-events-section h2,
+.home-weather-section h2,
+.home-forecast-section h2 {
+    background-color: #334155;
+    color: #FFFFFF !important;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+}
+
+.event-item, #liveWeatherOutput, #forecastOutput {
+    padding: 1rem;
+    color: #000000;
+}
+
+.event-date {
+    display: block;
+    color: #38BDF8;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.event-item h3 {
+    font-size: 1.05rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.event-item p {
+    font-size: 0.88rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.home-spotlights-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dynamicSpotlightGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.business-card-item {
+    background-color: #E2E8F0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-branding-shield {
+    background-color: #CBD5E1;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #94A3B8;
+}
+
+.logo-fallback-svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+.card-text-details {
+    color: #000000;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.card-text-details h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #1B3352;
+}
+
+.tagline-phrase {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.88rem;
+    opacity: 0.8;
+    margin: 0 0 0.5rem 0;
+}
+
+.info-row-detail {
+    margin: 0;
+}
+
+.card-redirect-anchor {
+    color: #1B3352;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+body.dark-mode .card-redirect-anchor, 
+.dark-mode .card-redirect-anchor {
+    color: #38BDF8 !important;
+}
+
+footer {
+    background-color: #0F1724;
+    color: #F8FAFC;
+    padding: 2.5rem 1rem;
+    margin-top: 1.5rem !important;
+    text-align: center;
+}
+
+.footer-primary-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-details-block h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-details-block p {
+    margin: 0.3rem 0;
+    font-size: 0.88rem;
+    opacity: 0.8;
+}
+
+.social-channels {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-channels a {
+    color: #F8FAFC;
+    text-decoration: none;
+    transition: transform var(--transition-engine);
+    display: inline-block;
+}
+
+.social-channels a:hover {
+    transform: scale(1.15);
+    color: #38BDF8;
+}
+
+.social-icon-svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-metadata-row {
+    padding-top: 1.5rem;
+    font-size: 0.82rem;
+    opacity: 0.7;
+}
+
+.footer-metadata-row p {
+    margin: 0.5rem 0;
+}
+
+.audit-preload-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}

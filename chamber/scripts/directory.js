@@ -8,20 +8,44 @@ const themeToggle = document.getElementById("themeToggle");
 const menuIcon = document.getElementById("menuIcon");
 const closeIcon = document.getElementById("closeIcon");
 
-menuBtn.addEventListener("click", () => {
-    const isOpened = navbar.classList.toggle("open-menu");
-    menuBtn.setAttribute("aria-expanded", isOpened.toString());
-    if (isOpened) {
-        menuIcon.classList.remove("active-toggle-icon");
-        closeIcon.classList.add("active-toggle-icon");
-    } else {
-        closeIcon.classList.remove("active-toggle-icon");
-        menuIcon.classList.add("active-toggle-icon");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll("#navbar ul li a");
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute("href");
+        if (currentPath === linkHref || (currentPath === "" && linkHref === "index.html")) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
 });
 
+const openWeatherMapKey = "YOUR_REAL_OPENWEATHERMAP_API_KEY_HERE";
+const chamberLat = "34.0522";
+const chamberLon = "-118.2437";
+const weatherApiUrl = `https://openweathermap.org{chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
+const membersJsonUrl = "data/members.json";
+
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark-mode");
+    document.body.classList.add("dark-mode");
+} else {
+    document.documentElement.classList.remove("dark-mode");
+    document.body.classList.remove("dark-mode");
+}
+
 themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    if (document.documentElement.classList.contains("dark-mode")) {
+        document.documentElement.classList.remove("dark-mode");
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.documentElement.classList.add("dark-mode");
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+    }
 });
 
 document.getElementById("yearContainer").textContent = new Date().getFullYear();
@@ -101,3 +125,15 @@ listBtn.addEventListener("click", () => {
 });
 
 loadChamberDirectoryData();
+
+menuBtn.addEventListener("click", () => {
+    const isOpened = navbar.classList.toggle("open-menu");
+    menuBtn.setAttribute("aria-expanded", isOpened.toString());
+    if (isOpened) {
+        menuIcon.classList.remove("active-toggle-icon");
+        closeIcon.classList.add("active-toggle-icon");
+    } else {
+        closeIcon.classList.remove("active-toggle-icon");
+        menuIcon.classList.add("active-toggle-icon");
+    }
+});

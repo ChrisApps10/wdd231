@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Angeles Chamber of Commerce - Directory</title>
-    <meta name="description" content="Directory page for the LA Chamber of Commerce">
+    <title>Los Angeles Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Los Angeles Chamber of Commerce. Explore upcoming regional networking mixers, live weather, and premium partner spotlights.">
     <meta name="author" content="Chris Aparicio">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Los Angeles Chamber of Commerce Member Directory">
-    <meta property="og:description" content="Connect with verified local businesses, corporate silver allies, and elite gold chamber partners in Los Angeles.">
-    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/directory.html">
-    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/directory.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/directory-small.css">
-    <link rel="stylesheet" href="styles/directory-large.css" media="(min-width: 600px)">
-    <script>
+    <meta property="og:title" content="Los Angeles Chamber of Commerce - Home">
+    <meta property="og:description" content="Grow your business with the Los Angeles Chamber of Commerce. Explore local events, live weather, and member spotlights.">
+    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index-small.css">
+    <link rel="stylesheet" href="styles/index-large.css" media="(min-width: 600px)">
+        <script>
         if (localStorage.getItem("theme") === "dark") {
             document.documentElement.classList.add("dark-mode");
         }
     </script>
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -32,7 +32,7 @@
                     <polygon points="50,24 23,72 77,72" stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
                 </svg>
                 <h2>Los Angeles | Chamber of Commerce</h2>
-            </div>
+            </div>        
             <div class="header-controls">
                 <button id="themeToggle" aria-label="Toggle dark and light interface mode" class="control-btn-item">
                     <svg class="icon-svg-ui moon-icon active-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -63,7 +63,7 @@
                 </button>
             </div>
         </div>
-                <nav id="navbar" aria-label="Main Website Navigation Links Container">
+        <nav id="navbar" aria-label="Main Website Navigation Links Container">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Chamber</a></li>
@@ -72,43 +72,43 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="directory-control-bar">
-            <h1>Los Angeles Chamber of Commerce - Directory</h1>
-            <p>Explore and network with our elite local members and corporate allies.</p>
-            <div class="layout-toggle-wrapper">
-                <button id="gridBtn" class="view-btn active-view" aria-label="Switch display window layout to grid view cards">
-                    <svg class="icon-svg-ui btn-icon-spacing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect x="3" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="14" width="7" height="7"></rect>
-                        <rect x="3" y="14" width="7" height="7"></rect>
-                    </svg>
-                    <span>Grid View</span>
-                </button>
-                <button id="listBtn" class="view-btn" aria-label="Switch display window layout to uniform single column list view text items">
-                    <svg class="icon-svg-ui btn-icon-spacing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="8" y1="6" x2="21" y2="6"></line>
-                        <line x1="8" y1="12" x2="21" y2="12"></line>
-                        <line x1="8" y1="18" x2="21" y2="18"></line>
-                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                    </svg>
-                    <span>List View</span>
-                </button>
+    <main class="home-main-content">
+        <h1 class="page-main-title">Home</h1>
+        <section class="home-hero-banner">
+            <div class="hero-cta-box">
+                <a href="#" class="view-btn active-view">Keynote Tickets</a>
             </div>
         </section>
-        <div id="directoryDisplay" class="grid-layout-style"></div>
-        <div class="audit-preload-container">
-            <img src="images/member1.jpg" alt="Los Angeles Tech Solutions Logo Verification Asset">
-            <img src="images/member2.jpg" alt="Angel City Brews & Cafe Logo Verification Asset">
-            <img src="images/member3.jpg" alt="Pacific Coast Marketing Logo Verification Asset">
-            <img src="images/member4.jpg" alt="SoCal Corporate Legal Group Logo Verification Asset">
-            <img src="images/member5.jpg" alt="Metro Green Logistics Logo Verification Asset">
-            <img src="images/member6.jpg" alt="Horizon Wealth Management Logo Verification Asset">
-            <img src="images/member7.jpg" alt="Griffith Architectural Design Logo Verification Asset">
+        <div class="home-info-wrapper">
+            <section class="home-events-section">
+                <h2>Events</h2>
+                <div class="event-item">
+                    <span class="event-date">May 28 | 6:00 PM</span>
+                    <h3>Annual Corporate Networking Mixer</h3>
+                    <p>Connect with local businesses and elite silver allies.</p>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">June 04 | 9:30 AM</span>
+                    <h3>Small Business Tech Infrastructure Seminar</h3>
+                    <p>An operational strategy session covering cloud solutions deployments.</p>
+                </div>
+            </section>
+            <section class="home-weather-section">
+                <h2>Current Weather</h2>
+                <div id="liveWeatherOutput">
+                    <p>Loading weather data...</p>
+                </div>
+            </section>
+            <section class="home-forecast-section">
+                <h2>Weather Forecast</h2>
+                <div id="forecastOutput">
+                    <p>Loading forecast horizon...</p>
+                </div>
+            </section>
         </div>
+        <section class="home-spotlights-section">
+            <div id="dynamicSpotlightGrid"></div>
+        </section>
     </main>
     <footer>
         <div class="footer-primary-row">
