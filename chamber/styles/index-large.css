@@ -78,7 +78,7 @@
         display: block;
         padding: 1rem 0;
         font-weight: 700;
-        color: var(--text-light);
+        color: #FFFFFF;
         border-bottom: 1px solid rgba(222, 227, 232, 0.1);
         border-top: none;
         background-color: transparent;
@@ -86,7 +86,7 @@
     }
 
     #navbar a:hover {
-        color: #A2B0C3;
+        color: #38BDF8;
         background-color: transparent;
     }
 

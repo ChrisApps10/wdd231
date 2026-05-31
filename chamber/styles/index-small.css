@@ -154,9 +154,14 @@ body.dark-mode #themeToggle .icon-svg-ui,
     transition: background-color var(--transition-engine);
 }
 
-#navbar ul li a:hover, #navbar ul li a.active {
-    background-color: #38BDF8 !important;
-    color: #0F172A !important;
+#navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #FFFFFF !important;
+}
+
+#navbar ul li a.active {
+    background-color: #1B3352 !important;
+    color: #FFFFFF !important;
     font-weight: bold !important;
 }
 
@@ -289,7 +294,7 @@ body.dark-mode .card-text-details h3,
 
 .event-date {
     display: block;
-    color: #38BDF8;
+    color: #1B3352;
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
