@@ -13,11 +13,55 @@
     --transition-engine: 0.25s;
 }
 
+body {
+    font-family: var(--main-font);
+    color: var(--text-dark);
+    background-color: var(--surface-light);
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-engine), color var(--transition-engine);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    margin-top: 0;
+}
+
+.control-btn-item {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#themeToggle .sun-icon {
+    display: none;
+}
+
+.dark-mode #themeToggle .moon-icon {
+    display: none !important;
+}
+
+.dark-mode #themeToggle .sun-icon {
+    display: block !important;
+    color: #FBBF24 !important;
+}
+
+body.dark-mode, 
+.dark-mode body,
+.dark-mode {
+    color: #F8FAFC !important;
+    background-color: var(--surface-dark) !important;
+}
+
+body.dark-mode .business-card-item,
+.dark-mode .business-card-item {
+    background-color: var(--card-surface-dark) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 header {
     background-color: var(--primary-color);
     color: #FFFFFF;
-    position: relative;
-    z-index: 1000;
 }
 
 .header-container {
@@ -54,12 +98,6 @@ header {
     gap: 0.5rem;
 }
 
-.control-btn-item {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
 .menu-toggle-btn {
     background-color: transparent !important;
     border: none !important;
@@ -73,8 +111,8 @@ header {
 }
 
 .icon-svg-ui {
-    width: 24px;
-    height: 24px;
+    width: 24px !important;
+    height: 24px !important;
     display: none;
 }
 
@@ -82,32 +120,18 @@ header {
     stroke: #FFFFFF !important;
 }
 
+body.dark-mode #themeToggle .icon-svg-ui,
+.dark-mode #themeToggle .icon-svg-ui {
+    fill: currentColor;
+}
+
 .active-toggle-icon {
     display: block !important;
-}
-
-#themeToggle .sun-icon {
-    display: none;
-}
-
-.dark-mode #themeToggle .moon-icon {
-    display: none !important;
-}
-
-.dark-mode #themeToggle .sun-icon {
-    display: block !important;
-    color: #FBBF24 !important;
 }
 
 #navbar {
     display: none;
     background-color: #0F172A;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 999;
 }
 
 #navbar.open-menu {
@@ -126,39 +150,14 @@ header {
     background-color: #0F172A;
     padding: 1rem;
     text-decoration: none;
-    text-align: center;
     border-top: 1px solid rgba(255,255,255,0.05);
     transition: background-color var(--transition-engine);
 }
 
-#navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #FFFFFF;
-}
-
-#navbar ul li a.active {
+#navbar ul li a:hover, #navbar ul li a.active {
     background-color: #38BDF8 !important;
     color: #0F172A !important;
     font-weight: bold !important;
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-body {
-    font-family: var(--main-font);
-    color: var(--text-dark);
-    background-color: var(--surface-light);
-    margin: 0;
-    padding: 0;
-    transition: background-color var(--transition-engine), color var(--transition-engine);
-}
-
-body.dark-mode, 
-.dark-mode body,
-.dark-mode {
-    color: #F8FAFC !important;
-    background-color: var(--surface-dark) !important;
 }
 
 body.dark-mode .home-events-section,
@@ -218,7 +217,7 @@ body.dark-mode .card-text-details h3,
     width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
-    color: var(--text-dark);
+    color: #FFFFFF !important;
 }
 
 .home-main-content {
@@ -232,7 +231,7 @@ body.dark-mode .card-text-details h3,
 .home-hero-banner {
     position: relative;
     background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/hero.jpg") !important;
-    background-position: center 35% !important;
+    background-position: center 15% !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     border-radius: 8px;
