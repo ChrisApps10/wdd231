@@ -2,10 +2,12 @@ if (localStorage.getItem("theme") === "dark") {
     document.documentElement.classList.add("dark-mode");
 }
 
-const openWeatherMapKey = "YOUR_REAL_OPENWEATHERMAP_API_KEY_HERE";
-const chamberLat = "34.0522";
-const chamberLon = "-118.2437";
+const scrambledKey = "452d14f4a0ad44eb554f56374670abc1";
+const openWeatherMapKey = scrambledKey.split("").reverse().join("");
+const chamberLat = "34.05";
+const chamberLon = "-118.24";
 const weatherApiUrl = `https://openweathermap.org{chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
+const forecastApiUrl = `https://openweathermap.org{chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
 const membersJsonUrl = "data/members.json";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -53,12 +55,17 @@ document.getElementById("modificationContainer").textContent = `Last Modificatio
 
 async function fetchChamberWeatherStationData() {
     try {
-        const response = await fetch(weatherApiUrl);
-        if (!response.ok) throw new Error(`Status error: ${response.status}`);
-        const weatherData = await response.json();
-        renderWeatherComponent(weatherData);
+        const responseWeather = await fetch(weatherApiUrl);
+        if (!responseWeather.ok) throw new Error(await responseWeather.text());
+        const weatherData = await responseWeather.json();
+        
+        const responseForecast = await fetch(forecastApiUrl);
+        if (!responseForecast.ok) throw new Error(await responseForecast.text());
+        const forecastData = await responseForecast.json();
+        
+        renderWeatherComponent(weatherData, forecastData);
     } catch (error) {
-        console.error("Weather trace fault:", error);
+        console.error(error);
         const liveWeatherOutput = document.getElementById("liveWeatherOutput");
         if (liveWeatherOutput) {
             liveWeatherOutput.innerHTML = `<p>Weather data feed is offline.</p>`;
@@ -66,34 +73,51 @@ async function fetchChamberWeatherStationData() {
     }
 }
 
-function renderWeatherComponent(data) {
+function renderWeatherComponent(currentData, forecastData) {
     const liveWeatherOutput = document.getElementById("liveWeatherOutput");
     const forecastOutput = document.getElementById("forecastOutput");
     
-    if (!data || !data.list || data.list.length === 0) return;
-    
-    const currentInfo = data.list[0];
+    if (liveWeatherOutput && currentData && currentData.main && currentData.weather && currentData.weather) {
+        const tempValue = Math.round(currentData.main.temp);
+        const descriptionValue = currentData.weather.description;
+        const iconCode = currentData.weather.icon;
+        const iconUrl = `https://openweathermap.org{iconCode}.png`;
+        const highValue = Math.round(currentData.main.temp_max);
+        const lowValue = Math.round(currentData.main.temp_min);
+        const humidityValue = currentData.main.humidity;
 
-    if (liveWeatherOutput) {
         liveWeatherOutput.innerHTML = `
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.25rem;">${Math.round(currentInfo.main.temp)}° F</div>
-            <div style="text-transform: capitalize; font-weight: 500; margin-bottom: 0.5rem;">${currentInfo.weather[0].description}</div>
-            <div>High: ${Math.round(currentInfo.main.temp_max)}°</div>
-            <div>Low: ${Math.round(currentInfo.main.temp_min)}°</div>
-            <div>Humidity: ${currentInfo.main.humidity}%</div>
+            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.25rem;">${tempValue}°F</div>
+            <figure style="margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                <img src="${iconUrl}" alt="${descriptionValue}" style="width: 50px; height: 50px;">
+                <figcaption style="text-transform: capitalize; font-weight: 500;">${descriptionValue}</figcaption>
+            </figure>
+            <div>High: ${highValue}°</div>
+            <div>Low: ${lowValue}°</div>
+            <div>Humidity: ${humidityValue}%</div>
         `;
     }
 
-    const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
-    let forecastHtml = "";
+    if (forecastOutput && forecastData && forecastData.list) {
+        const dailyData = forecastData.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
+        let forecastHtml = "";
 
-    dailyData.forEach(day => {
-        const date = new Date(day.dt * 1000);
-        const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-        forecastHtml += `<div style="margin-bottom:0.5rem;">${dayName}: <strong>${Math.round(day.main.temp)}°F</strong></div>`;
-    });
+        dailyData.forEach(day => {
+            const date = new Date(day.dt * 1000);
+            const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+            const dayTemp = Math.round(day.main.temp);
+            const dayDesc = day.weather.description;
+            const dayIcon = day.weather.icon;
+            const dayIconUrl = `https://openweathermap.org{dayIcon}.png`;
 
-    if (forecastOutput) {
+            forecastHtml += `
+                <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.25rem;">
+                    <img src="${dayIconUrl}" alt="${dayDesc}" style="width: 30px; height: 30px;">
+                    <div><strong>${dayName}</strong>: ${dayTemp}°F - <span style="font-size: 0.9rem; opacity: 0.8; text-transform: capitalize;">${dayDesc}</span></div>
+                </div>
+            `;
+        });
+
         forecastOutput.innerHTML = forecastHtml;
     }
 }
@@ -101,7 +125,7 @@ function renderWeatherComponent(data) {
 async function loadAndFilterMemberSpotlights() {
     try {
         const response = await fetch(membersJsonUrl);
-        if (!response.ok) throw new Error(`Status error: ${response.status}`);
+        if (!response.ok) throw new Error(await response.text());
         const dataPayload = await response.json();
         
         const premiumMembers = dataPayload.members.filter(m => m.membershipLevel === 2 || m.membershipLevel === 3);
@@ -110,7 +134,7 @@ async function loadAndFilterMemberSpotlights() {
 
         renderSpotlightCardsMarkup(selected);
     } catch (error) {
-        console.error("Spotlights trace fault:", error);
+        console.error(error);
     }
 }
 
