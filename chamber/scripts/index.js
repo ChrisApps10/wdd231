@@ -77,10 +77,10 @@ function renderWeatherComponent(currentData, forecastData) {
     const liveWeatherOutput = document.getElementById("liveWeatherOutput");
     const forecastOutput = document.getElementById("forecastOutput");
     
-    if (liveWeatherOutput && currentData && currentData.main && currentData.weather && currentData.weather) {
+    if (liveWeatherOutput && currentData && currentData.main && currentData.weather && currentData.weather[0]) {
         const tempValue = Math.round(currentData.main.temp);
-        const descriptionValue = currentData.weather.description;
-        const iconCode = currentData.weather.icon;
+        const descriptionValue = currentData.weather[0].description;
+        const iconCode = currentData.weather[0].icon;
         const iconUrl = `https://openweathermap.org{iconCode}.png`;
         const highValue = Math.round(currentData.main.temp_max);
         const lowValue = Math.round(currentData.main.temp_min);
@@ -88,7 +88,7 @@ function renderWeatherComponent(currentData, forecastData) {
 
         liveWeatherOutput.innerHTML = `
             <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.25rem;">${tempValue}°F</div>
-            <figure style="margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+            <figure style="margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; padding: 0;">
                 <img src="${iconUrl}" alt="${descriptionValue}" style="width: 50px; height: 50px;">
                 <figcaption style="text-transform: capitalize; font-weight: 500;">${descriptionValue}</figcaption>
             </figure>
@@ -103,19 +103,21 @@ function renderWeatherComponent(currentData, forecastData) {
         let forecastHtml = "";
 
         dailyData.forEach(day => {
-            const date = new Date(day.dt * 1000);
-            const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-            const dayTemp = Math.round(day.main.temp);
-            const dayDesc = day.weather.description;
-            const dayIcon = day.weather.icon;
-            const dayIconUrl = `https://openweathermap.org{dayIcon}.png`;
+            if (day.weather && day.weather[0]) {
+                const date = new Date(day.dt * 1000);
+                const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+                const dayTemp = Math.round(day.main.temp);
+                const dayDesc = day.weather[0].description;
+                const dayIcon = day.weather[0].icon;
+                const dayIconUrl = `https://openweathermap.org{dayIcon}.png`;
 
-            forecastHtml += `
-                <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.25rem;">
-                    <img src="${dayIconUrl}" alt="${dayDesc}" style="width: 30px; height: 30px;">
-                    <div><strong>${dayName}</strong>: ${dayTemp}°F - <span style="font-size: 0.9rem; opacity: 0.8; text-transform: capitalize;">${dayDesc}</span></div>
-                </div>
-            `;
+                forecastHtml += `
+                    <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.25rem;">
+                        <img src="${dayIconUrl}" alt="${dayDesc}" style="width: 30px; height: 30px;">
+                        <div><strong>${dayName}</strong>: ${dayTemp}°F - <span style="font-size: 0.9rem; opacity: 0.8; text-transform: capitalize;">${dayDesc}</span></div>
+                    </div>
+                `;
+            }
         });
 
         forecastOutput.innerHTML = forecastHtml;
@@ -148,12 +150,14 @@ function renderSpotlightCardsMarkup(spotlightArray) {
         spotlightCard.className = "business-card-item";
 
         spotlightCard.innerHTML = `
-            <div class="card-branding-shield">
+            <div class="card-text-details" style="padding-bottom: 0;">
+                <h3 style="margin-top: 0;">${company.name}</h3>
+                <p class="tagline-phrase">"${company.tagline || 'Business Tag Line'}"</p>
+            </div>
+            <div class="card-branding-shield" style="margin-bottom: 0.5rem;">
                 <img src="images/${company.image}" alt="${company.name}" class="logo-fallback-svg">
             </div>
-            <div class="card-text-details">
-                <h3>${company.name}</h3>
-                <p class="tagline-phrase">"${company.tagline || 'Business Tag Line'}"</p>
+            <div class="card-text-details" style="padding-top: 0;">
                 <p class="info-row-detail"><strong>EMAIL:</strong> <a href="mailto:${company.email}" style="color: inherit; text-decoration: none;">${company.email}</a></p>
                 <p class="info-row-detail"><strong>PHONE:</strong> ${company.phone}</p>
                 <p class="info-row-detail"><strong>URL:</strong> <a href="${company.website}" target="_blank" rel="noopener" class="card-redirect-anchor">${company.website.replace('https://', '')}</a></p>

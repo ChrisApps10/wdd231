@@ -83,9 +83,8 @@ header {
 }
 
 .logo-svg {
-    width: 28px;
-    height: 28px;
-    color: #FFFFFF !important;
+    width: 28px !important;
+    height: 28px !important;
     display: block;
 }
 
@@ -149,15 +148,22 @@ header {
     color: #F8FAFC;
     background-color: #0F172A;
     padding: 1rem;
-    text-decoration: none;
+    text-decoration: none !important;
+    text-align: center;
     border-top: 1px solid rgba(255,255,255,0.05);
     transition: background-color var(--transition-engine);
 }
 
-#navbar ul li a:hover, #navbar ul li a.active {
-    background-color: #38BDF8;
-    color: #0F172A;
-    font-weight: bold;
+#navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+
+#navbar ul li a.active {
+    background-color: #1B3352 !important;
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
 }
 
 .directory-control-bar {
