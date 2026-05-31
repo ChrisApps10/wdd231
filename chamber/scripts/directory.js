@@ -1,3 +1,7 @@
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark-mode");
+}
+
 const dataEndpointUrl = "data/members.json";
 const directoryDisplay = document.getElementById("directoryDisplay");
 const gridBtn = document.getElementById("gridBtn");
