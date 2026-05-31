@@ -461,3 +461,8 @@ footer {
     height: 0 !important;
     color: #000000 !important;
 }
+
+body.dark-mode .event-date,
+.dark-mode .event-date {
+    color: #38BDF8 !important;
+}
