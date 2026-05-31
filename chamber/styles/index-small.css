@@ -217,7 +217,7 @@ body.dark-mode .card-text-details h3,
     width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
-    color: #FFFFFF !important;
+    color: #000000;
 }
 
 .home-main-content {
