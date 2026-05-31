@@ -343,6 +343,7 @@ body.dark-mode .card-text-details h3,
     align-items: center;
     justify-content: center;
     border: 1px solid #94A3B8;
+    color: #1B3352 !important;
 }
 
 .logo-fallback-svg {
@@ -458,4 +459,5 @@ footer {
     opacity: 0 !important;
     width: 0 !important;
     height: 0 !important;
+    color: #000000 !important;
 }
