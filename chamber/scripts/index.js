@@ -31,6 +31,19 @@ const themeToggle = document.getElementById("themeToggle");
 const menuIcon = document.getElementById("menuIcon");
 const closeIcon = document.getElementById("closeIcon");
 
+menuBtn.addEventListener("click", () => {
+    const isOpened = navbar.classList.toggle("open-menu");
+    menuBtn.setAttribute("aria-expanded", isOpened.toString());
+
+    if (isOpened) {
+        menuIcon.classList.remove("active-toggle-icon");
+        closeIcon.classList.add("active-toggle-icon");
+    } else {
+        closeIcon.classList.remove("active-toggle-icon");
+        menuIcon.classList.add("active-toggle-icon");
+    }
+});
+
 if (localStorage.getItem("theme") === "dark") {
     document.documentElement.classList.add("dark-mode");
     document.body.classList.add("dark-mode");
