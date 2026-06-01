@@ -2,12 +2,12 @@ if (localStorage.getItem("theme") === "dark") {
     document.documentElement.classList.add("dark-mode");
 }
 
-const scrambledKey = "452d14f4a0ad44eb554f56374670abc1";
-const openWeatherMapKey = scrambledKey.split("").reverse().join("");
+const openWeatherMapKey = "452d14f4a0ad44eb554f56374670abc1";
 const chamberLat = "34.05";
 const chamberLon = "-118.24";
-const weatherApiUrl = `https://openweathermap.org{chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
-const forecastApiUrl = `https://openweathermap.org{chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
+
+const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
+const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${chamberLat}&lon=${chamberLon}&units=imperial&appid=${openWeatherMapKey}`;
 const membersJsonUrl = "data/members.json";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach(link => {
         const linkHref = link.getAttribute("href");
+
         if (currentPath === linkHref || (currentPath === "" && linkHref === "index.html")) {
             link.classList.add("active");
         } else {
@@ -56,19 +57,35 @@ document.getElementById("modificationContainer").textContent = `Last Modificatio
 async function fetchChamberWeatherStationData() {
     try {
         const responseWeather = await fetch(weatherApiUrl);
-        if (!responseWeather.ok) throw new Error(await responseWeather.text());
+
+        if (!responseWeather.ok) {
+            throw new Error(`HTTP error! status: ${responseWeather.status}`);
+        }
+
         const weatherData = await responseWeather.json();
-        
+
         const responseForecast = await fetch(forecastApiUrl);
-        if (!responseForecast.ok) throw new Error(await responseForecast.text());
+
+        if (!responseForecast.ok) {
+            throw new Error(`HTTP error! status: ${responseForecast.status}`);
+        }
+
         const forecastData = await responseForecast.json();
-        
+
         renderWeatherComponent(weatherData, forecastData);
+
     } catch (error) {
-        console.error(error);
+        console.error("Fetch failed:", error);
+
         const liveWeatherOutput = document.getElementById("liveWeatherOutput");
+        const forecastOutput = document.getElementById("forecastOutput");
+
         if (liveWeatherOutput) {
             liveWeatherOutput.innerHTML = `<p>Weather data feed is offline.</p>`;
+        }
+
+        if (forecastOutput) {
+            forecastOutput.innerHTML = "";
         }
     }
 }
@@ -76,48 +93,72 @@ async function fetchChamberWeatherStationData() {
 function renderWeatherComponent(currentData, forecastData) {
     const liveWeatherOutput = document.getElementById("liveWeatherOutput");
     const forecastOutput = document.getElementById("forecastOutput");
-    
-    if (liveWeatherOutput && currentData && currentData.main && currentData.weather && currentData.weather[0]) {
+
+    if (
+        liveWeatherOutput &&
+        currentData &&
+        currentData.main &&
+        currentData.weather &&
+        currentData.weather[0]
+    ) {
         const tempValue = Math.round(currentData.main.temp);
         const descriptionValue = currentData.weather[0].description;
         const iconCode = currentData.weather[0].icon;
-        const iconUrl = `https://openweathermap.org{iconCode}.png`;
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
         const highValue = Math.round(currentData.main.temp_max);
         const lowValue = Math.round(currentData.main.temp_min);
         const humidityValue = currentData.main.humidity;
 
+        const sunrise = new Date(currentData.sys.sunrise * 1000)
+            .toLocaleTimeString([], {
+                hour: "numeric",
+                minute: "2-digit"
+            });
+
+        const sunset = new Date(currentData.sys.sunset * 1000)
+            .toLocaleTimeString([], {
+                hour: "numeric",
+                minute: "2-digit"
+            });
+
         liveWeatherOutput.innerHTML = `
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.25rem;">${tempValue}°F</div>
-            <figure style="margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; padding: 0;">
-                <img src="${iconUrl}" alt="${descriptionValue}" style="width: 50px; height: 50px;">
-                <figcaption style="text-transform: capitalize; font-weight: 500;">${descriptionValue}</figcaption>
-            </figure>
+            <div style="display:flex;align-items:center;gap:1rem;">
+                <img src="${iconUrl}" alt="${descriptionValue}" style="width:70px;height:70px;">
+                <div>
+                    <div style="font-size:1.5rem;font-weight:bold;">${tempValue}°F</div>
+                    <div style="text-transform:capitalize;">${descriptionValue}</div>
+                </div>
+            </div>
             <div>High: ${highValue}°</div>
             <div>Low: ${lowValue}°</div>
             <div>Humidity: ${humidityValue}%</div>
+            <div>Sunrise: ${sunrise}</div>
+            <div>Sunset: ${sunset}</div>
         `;
     }
 
     if (forecastOutput && forecastData && forecastData.list) {
-        const dailyData = forecastData.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
+        const dailyData = forecastData.list
+            .filter(item => item.dt_txt.includes("12:00:00"))
+            .slice(0, 3);
+
         let forecastHtml = "";
 
-        dailyData.forEach(day => {
-            if (day.weather && day.weather[0]) {
-                const date = new Date(day.dt * 1000);
-                const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-                const dayTemp = Math.round(day.main.temp);
-                const dayDesc = day.weather[0].description;
-                const dayIcon = day.weather[0].icon;
-                const dayIconUrl = `https://openweathermap.org{dayIcon}.png`;
+        dailyData.forEach((day, index) => {
+            const date = new Date(day.dt * 1000);
 
-                forecastHtml += `
-                    <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 0.25rem;">
-                        <img src="${dayIconUrl}" alt="${dayDesc}" style="width: 30px; height: 30px;">
-                        <div><strong>${dayName}</strong>: ${dayTemp}°F - <span style="font-size: 0.9rem; opacity: 0.8; text-transform: capitalize;">${dayDesc}</span></div>
-                    </div>
-                `;
-            }
+            const label =
+                index === 0
+                    ? "Today"
+                    : date.toLocaleDateString("en-US", {
+                          weekday: "long"
+                      });
+
+            forecastHtml += `
+                <div style="margin-bottom:1rem;">
+                    ${label}: <strong>${Math.round(day.main.temp)}°F</strong>
+                </div>
+            `;
         });
 
         forecastOutput.innerHTML = forecastHtml;
@@ -127,26 +168,38 @@ function renderWeatherComponent(currentData, forecastData) {
 async function loadAndFilterMemberSpotlights() {
     try {
         const response = await fetch(membersJsonUrl);
-        if (!response.ok) throw new Error(await response.text());
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const dataPayload = await response.json();
-        
-        const premiumMembers = dataPayload.members.filter(m => m.membershipLevel === 2 || m.membershipLevel === 3);
+
+        const premiumMembers = dataPayload.members.filter(m => {
+            const level = String(m.membershipLevel).toLowerCase();
+            return level === "2" || level === "3" || level === "silver" || level === "gold";
+        });
+
         const shuffled = premiumMembers.sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, 3);
 
         renderSpotlightCardsMarkup(selected);
+
     } catch (error) {
-        console.error(error);
+        console.error("Fetch failed:", error);
     }
 }
 
 function renderSpotlightCardsMarkup(spotlightArray) {
     const grid = document.getElementById("dynamicSpotlightGrid");
+
     if (!grid) return;
+
     grid.innerHTML = "";
 
     spotlightArray.forEach(company => {
         const spotlightCard = document.createElement("section");
+
         spotlightCard.className = "business-card-item";
 
         spotlightCard.innerHTML = `
@@ -163,21 +216,10 @@ function renderSpotlightCardsMarkup(spotlightArray) {
                 <p class="info-row-detail"><strong>URL:</strong> <a href="${company.website}" target="_blank" rel="noopener" class="card-redirect-anchor">${company.website.replace('https://', '')}</a></p>
             </div>
         `;
+
         grid.appendChild(spotlightCard);
     });
 }
-
-menuBtn.addEventListener("click", () => {
-    const isOpened = navbar.classList.toggle("open-menu");
-    menuBtn.setAttribute("aria-expanded", isOpened.toString());
-    if (isOpened) {
-        menuIcon.classList.remove("active-toggle-icon");
-        closeIcon.classList.add("active-toggle-icon");
-    } else {
-        closeIcon.classList.remove("active-toggle-icon");
-        menuIcon.classList.add("active-toggle-icon");
-    }
-});
 
 fetchChamberWeatherStationData();
 loadAndFilterMemberSpotlights();
