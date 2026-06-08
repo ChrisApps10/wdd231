@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Angeles Chamber of Commerce - Home</title>
-    <meta name="description" content="Welcome to the Los Angeles Chamber of Commerce. Explore upcoming regional networking mixers, live weather, and premium partner spotlights.">
+    <title>Los Angeles Chamber of Commerce - Thank You</title>
+    <meta name="description" content="Application Submission Page">
     <meta name="author" content="Chris Aparicio">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Los Angeles Chamber of Commerce - Homepage">
-    <meta property="og:description" content="Grow your business with the Los Angeles Chamber of Commerce. Explore local events, live weather, and member spotlights.">
-    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
-    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
+    <meta property="og:title" content="Application Received - Los Angeles Chamber of Commerce">
+    <meta property="og:description" content="Thank you for joining. Review your submitted application details here.">
+    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/thankyou.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script>
     if (localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.add("dark-mode");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("dark-mode");
+    });
     }
     </script>
-    <link rel="stylesheet" href="styles/index-small.css">
-    <link rel="stylesheet" href="styles/index-large.css" media="(min-width: 600px)">
-    <script src="scripts/index.js" defer></script>
+    <link rel="stylesheet" href="styles/thankyou-small.css">
+    <link rel="stylesheet" href="styles/thankyou-large.css" media="(min-width: 600px)">
+    <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="branding-box">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://w3.org" aria-hidden="true" focusable="false">
                     <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
                     <polygon points="50,24 23,72 77,72" stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
                 </svg>
@@ -72,43 +75,27 @@
             </ul>
         </nav>
     </header>
-    <main class="home-main-content">
-        <h1 class="page-main-title">Home</h1>
-        <section class="home-hero-banner">
-            <div class="hero-cta-box">
-                <a href="#" class="view-btn active-view">Keynote Tickets</a>
-            </div>
-        </section>
-        <div class="home-info-wrapper">
-            <section class="home-events-section">
-                <h2>Events</h2>
-                <div class="event-item">
-                    <span class="event-date">May 28 | 6:00 PM</span>
-                    <h3>Annual Corporate Networking Mixer</h3>
-                    <p>Connect with local businesses and elite silver allies.</p>
+
+    <main class="thankyou-main-content">
+        <h1 class="page-main-title">Application Received!</h1>
+        
+        <div class="thankyou-layout-wrapper">
+            <section class="confirmation-card">
+                <h2>Thank You for Joining Us</h2>
+                <p class="greeting-message">Your chamber membership application has been logged. Our review panel will process your records shortly.</p>
+                
+                <div class="submitted-data-box">
+                    <h3>Review Submitted Details</h3>
+                    <div id="formDataOutput" class="output-grid-container">
+                        <p class="loading-placeholder">Parsing incoming form parameters...</p>
+                    </div>
                 </div>
-                <div class="event-item">
-                    <span class="event-date">June 04 | 9:30 AM</span>
-                    <h3>Small Business Tech Infrastructure Seminar</h3>
-                    <p>An operational strategy session covering cloud solutions deployments.</p>
-                </div>
-            </section>
-            <section class="home-weather-section">
-                <h2>Current Weather</h2>
-                <div id="liveWeatherOutput">
-                    <p>Loading weather data...</p>
-                </div>
-            </section>
-            <section class="home-forecast-section">
-                <h2>Weather Forecast</h2>
-                <div id="forecastOutput">
-                    <p>Loading forecast horizon...</p>
+                
+                <div class="action-row-redirect">
+                    <a href="index.html" class="return-home-btn">Return to Homepage</a>
                 </div>
             </section>
         </div>
-        <section class="home-spotlights-section">
-            <div id="dynamicSpotlightGrid"></div>
-        </section>
     </main>
     <footer>
         <div class="footer-primary-row">

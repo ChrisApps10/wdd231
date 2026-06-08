@@ -1,7 +1,3 @@
-if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark-mode");
-}
-
 const openWeatherMapKey = "452d14f4a0ad44eb554f56374670abc1";
 const chamberLat = "34.05";
 const chamberLon = "-118.24";

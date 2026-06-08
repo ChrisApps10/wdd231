@@ -15,7 +15,7 @@
         box-sizing: border-box;
     }
 
-    .branding-box h1, .branding-box h2 {
+    .branding-box h2 {
         font-size: 1.4rem;
         font-weight: 700;
         color: #FFFFFF !important;
@@ -107,72 +107,15 @@
         color: #0F172A;
     }
 
-    .home-hero-banner,
-    .home-info-wrapper,
-    .home-spotlights-section {
+    .join-layout-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+        gap: 2rem;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
         box-sizing: border-box;
-    }
-
-    .home-hero-banner {
-        min-height: 350px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        padding: 2rem;
-        margin-top: 1.5rem;
-    }
-
-    .home-info-wrapper {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr;
-        align-items: stretch;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-    }
-
-    .home-events-section,
-    .home-weather-section,
-    .home-forecast-section {
-        background-color: #E2E8F0;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .home-spotlights-section {
-        padding: 1.5rem 0 5rem 0;
-    }
-
-    #dynamicSpotlightGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-
-    .business-card-item {
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .card-branding-shield {
-        height: 120px;
-    }
-
-    body.dark-mode .home-events-section h2,
-    .dark-mode .home-events-section h2,
-    body.dark-mode .home-weather-section h2,
-    .dark-mode .home-weather-section h2,
-    body.dark-mode .home-forecast-section h2,
-    .dark-mode .home-forecast-section h2 {
-        background-color: #1E293B !important;
-        color: #38BDF8 !important;
     }
 
     footer {
@@ -224,9 +167,5 @@
         padding-top: 1.5rem;
         box-sizing: border-box;
         gap: 0.5rem;
-    }
-
-    .meta-left, .meta-right {
-        text-align: center;
     }
 }
