@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+        document.body.classList.add("dark-mode");
+    }
+
     const currentPath = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("#navbar ul li a");
 

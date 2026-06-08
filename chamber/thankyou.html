@@ -14,14 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MerriweatherSans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-    if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark-mode");
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("dark-mode");
-    });
-    }
-    </script>
     <link rel="stylesheet" href="styles/thankyou-small.css">
     <link rel="stylesheet" href="styles/thankyou-large.css" media="(min-width: 600px)">
     <script src="scripts/thankyou.js" defer></script>
@@ -30,7 +22,7 @@
     <header>
         <div class="header-container">
             <div class="branding-box">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://w3.org" aria-hidden="true" focusable="false">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
                     <polygon points="50,24 23,72 77,72" stroke="currentColor" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
                 </svg>

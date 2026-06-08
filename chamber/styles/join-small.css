@@ -354,13 +354,13 @@ body.dark-mode .tier-card-item {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
-.tier-card-item h3 {
+.tier-card-item h2 {
     margin: 0 0 1rem 0;
     color: var(--primary-color);
     font-size: 1.3rem;
 }
 
-body.dark-mode .tier-card-item h3 {
+body.dark-mode .tier-card-item h2 {
     color: #38BDF8 !important;
 }
 
