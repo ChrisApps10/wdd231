@@ -16,7 +16,7 @@
 body {
     font-family: var(--main-font);
     color: var(--text-dark);
-    background-color: var(--surface-light);
+    background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
     transition: background-color var(--transition-engine), color var(--transition-engine);
@@ -51,12 +51,6 @@ body.dark-mode,
 .dark-mode {
     color: #F8FAFC !important;
     background-color: var(--surface-dark) !important;
-}
-
-body.dark-mode .business-card-item,
-.dark-mode .business-card-item {
-    background-color: var(--card-surface-dark) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 header {
@@ -208,54 +202,6 @@ body.dark-mode #navbar ul li a.active,
     text-decoration: none !important;
 }
 
-body.dark-mode .home-events-section,
-.dark-mode .home-events-section,
-body.dark-mode .home-weather-section,
-.dark-mode .home-weather-section,
-body.dark-mode .home-forecast-section,
-.dark-mode .home-forecast-section,
-body.dark-mode .business-card-item,
-.dark-mode .business-card-item {
-    background-color: #2A3A52 !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-}
-
-body.dark-mode .home-events-section h2,
-.dark-mode .home-events-section h2,
-body.dark-mode .home-weather-section h2,
-.dark-mode .home-weather-section h2,
-body.dark-mode .home-forecast-section h2,
-.dark-mode .home-forecast-section h2,
-body.dark-mode .home-spotlights-section h2,
-.dark-mode .home-spotlights-section h2 {
-    background-color: #1E293B !important;
-    color: #38BDF8 !important;
-}
-
-body.dark-mode .page-main-title,
-.dark-mode .page-main-title,
-body.dark-mode .event-item h3,
-body.dark-mode .event-item p,
-body.dark-mode #liveWeatherOutput,
-body.dark-mode #forecastOutput,
-.dark-mode .event-item h3,
-.dark-mode .event-item p,
-.dark-mode #liveWeatherOutput,
-.dark-mode #forecastOutput {
-    color: #FFFFFF !important;
-}
-
-body.dark-mode .card-text-details,
-.dark-mode .card-text-details {
-    color: #F8FAFC !important;
-}
-
-body.dark-mode .card-text-details h3,
-.dark-mode .card-text-details h3 {
-    color: #38BDF8 !important;
-}
-
 .page-main-title {
     font-family: var(--heading-font);
     font-size: 2.2rem;
@@ -268,60 +214,36 @@ body.dark-mode .card-text-details h3,
     color: #000000;
 }
 
-.home-main-content {
-    padding: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.home-hero-banner {
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url("../images/hero.jpg") !important;
-    background-position: center 15% !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 1rem;
-    box-sizing: border-box;
-    min-height: 200px;
-}
-
-.view-btn.active-view {
-    background-color: #1B3352 !important;
+body.dark-mode .page-main-title,
+.dark-mode .page-main-title {
     color: #FFFFFF !important;
-    border: 2px solid #1B3352;
-    padding: 0.6rem 1.4rem;
-    font-family: var(--main-font);
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
-.home-info-wrapper {
+.discover-main-content {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.discover-layout-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.home-events-section,
-.home-weather-section,
-.home-forecast-section {
+.discover-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.discover-card {
     background-color: #E2E8F0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.home-events-section h2,
-.home-weather-section h2,
-.home-forecast-section h2 {
+.discover-card h2 {
     background-color: #334155;
     color: #FFFFFF !important;
     margin: 0;
@@ -330,110 +252,83 @@ body.dark-mode .card-text-details h3,
     font-size: 1.2rem;
 }
 
-.event-item, #liveWeatherOutput, #forecastOutput {
+.card-content-block {
     padding: 1rem;
     color: #000000;
 }
 
-.event-date {
-    display: block;
-    color: #1B3352;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
+.card-content-block p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
-.event-item h3 {
-    font-size: 1.05rem;
-    margin: 0 0 0.25rem 0;
+.card-content-block p:last-child {
+    margin-bottom: 0;
 }
 
-.event-item p {
-    font-size: 0.88rem;
-    opacity: 0.8;
-    margin: 0;
+body.dark-mode .discover-card,
+.dark-mode .discover-card {
+    background-color: #2A3A52 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
-.home-spotlights-section {
-    width: 100%;
-    box-sizing: border-box;
+body.dark-mode .discover-card h2,
+.dark-mode .discover-card h2 {
+    background-color: #1E293B !important;
+    color: #38BDF8 !important;
 }
 
-#dynamicSpotlightGrid {
+body.dark-mode .card-content-block,
+.dark-mode .card-content-block {
+    color: #FFFFFF !important;
+}
+
+.discover-gallery-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.business-card-item {
+.discover-image-card {
     background-color: #E2E8F0;
     border-radius: 8px;
-    padding: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    box-sizing: border-box;
+}
+
+.discover-image-card picture {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.discover-image-card img {
     width: 100%;
-    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-branding-shield {
-    background-color: #CBD5E1;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #94A3B8;
-    color: #1B3352 !important;
-}
-
-.logo-fallback-svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: cover !important;
-    display: block;
-}
-
-.card-text-details {
-    color: #000000;
+.image-caption-text {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--main-font);
     font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-}
-
-.card-text-details h3 {
-    margin: 0;
+    color: #000000;
     text-align: center;
-    font-size: 1.3rem;
-    color: #1B3352;
 }
 
-.tagline-phrase {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.88rem;
-    opacity: 0.8;
-    margin: 0 0 0.5rem 0;
+body.dark-mode .discover-image-card,
+.dark-mode .discover-image-card {
+    background-color: #2A3A52 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-.info-row-detail {
-    margin: 0;
-}
-
-.card-redirect-anchor {
-    color: #1B3352;
-    text-decoration: underline;
-    font-weight: 700;
-}
-
-body.dark-mode .card-redirect-anchor, 
-.dark-mode .card-redirect-anchor {
-    color: #38BDF8 !important;
+body.dark-mode .image-caption-text,
+.dark-mode .image-caption-text {
+    color: #FFFFFF !important;
 }
 
 footer {
@@ -494,18 +389,4 @@ footer {
 
 .footer-metadata-row p {
     margin: 0.5rem 0;
-}
-
-.audit-preload-container {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    color: #000000 !important;
-}
-
-body.dark-mode .event-date,
-.dark-mode .event-date {
-    color: #38BDF8 !important;
 }

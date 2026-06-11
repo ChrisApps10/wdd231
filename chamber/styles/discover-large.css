@@ -30,8 +30,9 @@
     .control-btn-item {
         padding: 0 !important;
     }
-
-    #themeToggle, .menu-toggle-btn {
+    
+    #themeToggle,
+    .menu-toggle-btn {
         display: block;
         background: none !important;
         border: none !important;
@@ -41,7 +42,6 @@
         padding: 0.5rem;
         line-height: 1;
         box-shadow: none !important;
-        box-sizing: border-box;
     }
 
     body.dark-mode #themeToggle .icon-svg-ui,
@@ -93,77 +93,77 @@
         color: #0F172A;
     }
 
+    #navbar a:active {
+        color: #6C7A8C;
+        background-color: transparent;
+    }
+
     #navbar a.active {
         display: block;
         padding: 1rem 0;
         font-weight: 700;
-        background-color: #1B3352 !important;
-        color: #FFFFFF !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(222, 227, 232, 0.1);
         border-top: none;
-        text-decoration: none !important;
+        transition: color 0.2s ease;
+        background-color: #2563EB !important;
+        color: #FFFFFF;
     }
 
-    #directoryDisplay.grid-layout-style,
-    #dynamicSpotlightGrid.grid-layout-style {
+    body.dark-mode #navbar,
+    .dark-mode #navbar {
+        background-color: #334155 !important;
+    }
+
+    body.dark-mode #navbar a,
+    .dark-mode #navbar a {
+        background-color: #334155 !important;
+        color: #F8FAFC !important;
+    }
+
+    body.dark-mode #navbar a:hover,
+    .dark-mode #navbar a:hover {
+        background-color: #475569 !important;
+        color: #FFFFFF !important;
+    }
+
+    body.dark-mode #navbar a.active,
+    .dark-mode #navbar a.active {
+        background-color: #38BDF8 !important;
+        color: #0F172A !important;
+    }
+
+    .discover-main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .discover-layout-wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+        align-items: start;
+        padding: 1.5rem 0 5rem 0;
+    }
+
+    .discover-sidebar {
+        position: sticky;
+        top: 2rem;
+    }
+
+    .discover-gallery-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
-    #directoryDisplay.grid-layout-style .business-card-item:nth-child(7) {
-        grid-column: 2;
+    .discover-image-card img {
+        transition: transform 0.3s ease;
     }
 
-    #directoryDisplay.list-layout-style {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    #directoryDisplay.list-layout-style .business-card-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.6rem 1.5rem;
-    }
-
-    #directoryDisplay.list-layout-style .card-branding-shield {
-        display: none !important;
-    }
-
-    #directoryDisplay.list-layout-style .card-text-details {
-        padding: 0;
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    #directoryDisplay.list-layout-style .card-text-details h3 {
-        margin: 0;
-        flex: 1 1 200px;
-    }
-
-    #directoryDisplay.list-layout-style .tagline-phrase {
-        display: none;
-    }
-
-    #directoryDisplay.list-layout-style .membership-badge {
-        margin: 0;
-    }
-
-    #directoryDisplay.list-layout-style .card-divider {
-        display: none;
-    }
-
-    #directoryDisplay.list-layout-style .info-row-detail,
-    #directoryDisplay.list-layout-style .card-redirect-anchor {
-        margin: 0;
-        flex: 1 1 150px;
+    .discover-image-card:hover img {
+        transform: scale(1.02);
     }
 
     footer {
@@ -174,6 +174,7 @@
         padding: 2.5rem 2rem;
         box-sizing: border-box;
         width: 100%;
+        margin-top: 1.5rem !important;
     }
 
     .footer-primary-row {

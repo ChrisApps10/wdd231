@@ -51,7 +51,6 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--primary-color);
         border-top: 1px solid var(--accent-color);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         z-index: 100;
@@ -79,16 +78,15 @@
         display: block;
         padding: 1rem 0;
         font-weight: 700;
-        color: #FFFFFF;
+        text-align: center;
         border-bottom: 1px solid rgba(222, 227, 232, 0.1);
-        border-top: none;
-        background-color: transparent;
-        transition: color 0.2s ease;
+        transition: background-color 0.2s ease,
+                    color 0.2s ease;
     }
 
     #navbar a:hover {
-        color: #38BDF8;
-        background-color: transparent;
+        background-color: #2563EB;
+        color: #FFFFFF;
     }
 
     #navbar a:active {

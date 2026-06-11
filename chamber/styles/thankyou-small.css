@@ -136,8 +136,7 @@ body.dark-mode #themeToggle .icon-svg-ui,
 }
 
 #navbar {
-    display: none;
-    background-color: #0F172A;
+    background-color: #E2E8F0;
 }
 
 #navbar.open-menu {
@@ -150,25 +149,57 @@ body.dark-mode #themeToggle .icon-svg-ui,
     padding: 0;
 }
 
+#navbar a,
 #navbar ul li a {
-    display: block;
-    color: #F8FAFC;
-    background-color: #0F172A;
-    padding: 1rem;
+    background-color: #E2E8F0;
+    color: #1B3352;
     text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    transition: background-color var(--transition-engine);
 }
 
+#navbar a:hover,
 #navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #FFFFFF !important;
+    background-color: #CBD5E1;
+    color: #0F172A;
+    text-decoration: none;
 }
 
+#navbar a.active,
 #navbar ul li a.active {
-    background-color: #1B3352 !important;
+    background-color: #2563EB !important;
     color: #FFFFFF !important;
-    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+body.dark-mode #navbar,
+.dark-mode #navbar {
+    background-color: #334155 !important;
+}
+
+body.dark-mode #navbar a,
+.dark-mode #navbar a,
+body.dark-mode #navbar ul li a,
+.dark-mode #navbar ul li a {
+    background-color: #334155 !important;
+    color: #F8FAFC !important;
+    text-decoration: none !important;
+}
+
+body.dark-mode #navbar a:hover,
+.dark-mode #navbar a:hover,
+body.dark-mode #navbar ul li a:hover,
+.dark-mode #navbar ul li a:hover {
+    background-color: #475569 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+body.dark-mode #navbar a.active,
+.dark-mode #navbar a.active,
+body.dark-mode #navbar ul li a.active,
+.dark-mode #navbar ul li a.active {
+    background-color: #38BDF8 !important;
+    color: #0F172A !important;
+    text-decoration: none !important;
 }
 
 @keyframes slideFadeIn {
