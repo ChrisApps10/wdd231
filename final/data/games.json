@@ -1,0 +1,174 @@
+{
+  "games": [
+    {
+      "id": "g01",
+      "title": "Sega Saturn White Console (HST-3220)",
+      "category": "Consoles",
+      "price": "$185.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A+ Mint",
+      "hardwareSpecs": "100V power unit. Requires step-down transformer for safety. Pristine optical disc drive assembly.",
+      "image": "saturn-white.webp"
+    },
+    {
+      "id": "g02",
+      "title": "Super Famicom Boxed System",
+      "category": "Consoles",
+      "price": "$145.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B+ Very Good",
+      "hardwareSpecs": "Original motherboard. Native RF/AV out. Requires Japanese 100V AC adapter or verified local alternative.",
+      "image": "sufami-box.webp"
+    },
+    {
+      "id": "g03",
+      "title": "PC Engine Duo-R Console",
+      "category": "Consoles",
+      "price": "$295.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Fully recapped internal sound boards. Laser calibrated. Runs HuCards and CD-ROM² formats flawlessly.",
+      "image": "pcengine-duo.webp"
+    },
+    {
+      "id": "g04",
+      "title": "Nintendo 64 Clear Blue Edition",
+      "category": "Consoles",
+      "price": "$160.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B Minor Wear",
+      "hardwareSpecs": "Translucent casing. Clean jumper pak port. Works natively on local CRT screens supporting NTSC format.",
+      "image": "n64-clear.webp"
+    },
+    {
+      "id": "g05",
+      "title": "Sega Dreamcast Sakura Taisen Unit",
+      "category": "Consoles",
+      "price": "$340.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A+ Mint",
+      "hardwareSpecs": "Limited transparent pink shell variant. GD-ROM drive unit tested. Includes matching controller block.",
+      "image": "dreamcast-sakura.webp"
+    },
+    {
+      "id": "g06",
+      "title": "Chrono Trigger (Super Famicom)",
+      "category": "Games",
+      "price": "$45.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Boxed with complete foldout maps. Retains factory internal battery reading holding stable voltage saves.",
+      "image": "chrono-sfc.webp"
+    },
+    {
+      "id": "g07",
+      "title": "Akumajo Dracula X (Sega Saturn)",
+      "category": "Games",
+      "price": "$210.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B+ Very Good",
+      "hardwareSpecs": "Includes rare bonus art book insert. Disc mirror surface holds clean data tracks without scratch rings.",
+      "image": "dracula-saturn.webp"
+    },
+    {
+      "id": "g08",
+      "title": "Shin Megami Tensei (Game Boy)",
+      "category": "Games",
+      "price": "$65.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B Standard",
+      "hardwareSpecs": "Authentic cartridge board. Label surface text displays no fading or moisture stains. Contacts cleaned.",
+      "image": "smt-gb.webp"
+    },
+    {
+      "id": "g09",
+      "title": "Policenauts Box Set (3DO)",
+      "category": "Games",
+      "price": "$80.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Hideo Kojima signature edition packaging. Multi-disc set verified clean via hardware sector checks.",
+      "image": "policenauts-3do.webp"
+    },
+    {
+      "id": "g10",
+      "title": "Final Fantasy VI (Super Famicom)",
+      "category": "Games",
+      "price": "$35.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "C Fair Display",
+      "hardwareSpecs": "Box exhibits shelf edges softening. Internal manual completely intact. Cartridge contacts treated.",
+      "image": "ff6-sfc.webp"
+    },
+    {
+      "id": "g11",
+      "title": "Sega Saturn Virtual On Twin Stick",
+      "category": "Accessories",
+      "price": "$125.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B+ Very Good",
+      "hardwareSpecs": "Heavy metal base plate configuration. Microswitches hold firm tactile response clicks. Native link logic.",
+      "image": "twin-stick.webp"
+    },
+    {
+      "id": "g12",
+      "title": "Famicom Disk System Drive Unit",
+      "category": "Accessories",
+      "price": "$110.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "B Repaired",
+      "hardwareSpecs": "Drive mechanical belt fully replaced. Head tracking calibrated. Powered via C-cells or custom AC lines.",
+      "image": "disk-system.webp"
+    },
+    {
+      "id": "g13",
+      "title": "ASCII Fighting Stick (PlayStation)",
+      "category": "Accessories",
+      "price": "$75.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Turbo function slide gates responsive. Standard controller connector wire pristine with no line cuts.",
+      "image": "ascii-stick.webp"
+    },
+    {
+      "id": "g14",
+      "title": "Super Game Boy 2 Adapter",
+      "category": "Accessories",
+      "price": "$55.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A+ Mint",
+      "hardwareSpecs": "Features native clock hardware fix and link cable port extension socket. Clean PCB board pathways.",
+      "image": "sgb2-adapter.webp"
+    },
+    {
+      "id": "g15",
+      "title": "Sega Saturn HSS-0130 Arcade Panel",
+      "category": "Accessories",
+      "price": "$420.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Dual player layout housing genuine Seimitsu lever switches. Heavy desktop footprint chassis profile.",
+      "image": "arcade-panel.webp"
+    },
+    {
+      "id": "g16",
+      "title": "Metal Gear Solid Premium Package",
+      "category": "Games",
+      "price": "$195.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A+ Mint",
+      "hardwareSpecs": "Collector edition box holding dog-tags, soundtrack CD disk, and specialized metallic foil artwork booklet.",
+      "image": "mgs-premium.webp"
+    },
+    {
+      "id": "g17",
+      "title": "WonderSwan Crystal Blue Console",
+      "category": "Consoles",
+      "price": "$175.00",
+      "region": "NTSC-J (Japan)",
+      "collectibleGrade": "A Excellent",
+      "hardwareSpecs": "Highly sought TFT screen model variant. No dead matrix lines. Battery hatch holds locking tabs clean.",
+      "image": "wswan-crystal.webp"
+    }
+  ]
+}
