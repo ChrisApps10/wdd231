@@ -622,6 +622,9 @@ body.dark-mode .event-date,
 
 #directoryDisplay.list-layout-style .business-card-item {
     flex-direction: column;
+    padding: 1rem !important;
+    gap: 0.5rem;
+    background-color: var(--surface-card);
 }
 
 #directoryDisplay.list-layout-style .card-branding-shield {
@@ -683,4 +686,194 @@ body.dark-mode .view-btn.active-view {
 body.dark-mode .card-branding-shield {
     background-color: #334155 !important;
     color: #38BDF8 !important;
+}
+
+.join-main-content {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.join-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-container-card {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.form-container-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-container-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.form-container-card input[type="text"],
+.form-container-card input[type="email"],
+.form-container-card input[type="tel"],
+.form-container-card textarea {
+    padding: 0.65rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 0.95rem;
+    background-color: var(--surface-bg);
+    color: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-container-card input:focus,
+.form-container-card textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.form-container-card fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-container-card fieldset legend {
+    font-weight: 700;
+    padding: 0 0.5rem;
+}
+
+.radio-label {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.form-submit-btn {
+    background-color: var(--primary-color);
+    color: #FFFFFF !important;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tier-sidebar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tier-card-item {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.tier-card-item h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.open-modal-btn {
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.benefit-modal-box {
+    background-color: var(--surface-card);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 90%;
+    width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-inner-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.modal-inner-content ul {
+    padding-left: 1.25rem;
+    margin: 1rem 0;
+}
+
+.close-modal-btn {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+body.dark-mode .form-container-card,
+body.dark-mode .tier-card-item,
+body.dark-mode .benefit-modal-box {
+    background-color: var(--surface-card) !important;
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .form-container-card input,
+body.dark-mode .form-container-card textarea,
+body.dark-mode .form-container-card fieldset {
+    background-color: var(--surface-bg) !important;
+    border-color: rgba(255,255,255,0.15) !important;
+}
+
+body.dark-mode .tier-card-item h2,
+body.dark-mode .modal-inner-content h2 {
+    color: #38BDF8 !important;
+}
+
+body.dark-mode .open-modal-btn {
+    border-color: #38BDF8 !important;
+    color: #38BDF8 !important;
+}
+
+body.dark-mode .form-submit-btn,
+body.dark-mode .close-modal-btn {
+    background-color: #38BDF8 !important;
+    color: var(--surface-bg) !important;
 }

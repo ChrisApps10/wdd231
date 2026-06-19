@@ -253,11 +253,12 @@
     }
 
     #directoryDisplay.list-layout-style .business-card-item {
-        display: flex;
-        flex-direction: row;
+        display: grid !important;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr !important;
         align-items: center;
         justify-content: space-between;
-        padding: 0.6rem 1.5rem;
+        padding: 0.6rem 1.5rem !important;
+        gap: 1rem;
     }
 
     #directoryDisplay.list-layout-style .card-branding-shield {
@@ -265,30 +266,46 @@
     }
 
     #directoryDisplay.list-layout-style .card-text-details {
-        padding: 0;
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
+        padding: 0 !important;
+        display: contents !important;
     }
 
     #directoryDisplay.list-layout-style .card-text-details h3 {
         margin: 0;
-        flex: 1 1 200px;
+        text-align: left !important;
+        font-size: 1.05rem;
     }
 
     #directoryDisplay.list-layout-style .tagline-phrase {
-        display: none;
+        display: none !important;
     }
 
     #directoryDisplay.list-layout-style .card-divider {
-        display: none;
+        display: none !important;
     }
 
     #directoryDisplay.list-layout-style .info-row-detail {
-        margin: 0;
-        flex: 1 1 150px;
+        margin: 0 !important;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    #directoryDisplay.list-layout-style .inspect-member-trigger {
+        margin-top: 0 !important;
+        width: auto !important;
+        padding: 0.4rem 1rem !important;
+    }
+
+    .join-layout-wrapper {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr !important;
+        gap: 2rem !important;
+        align-items: start;
+        padding: 1.5rem 0;
+    }
+
+    .tier-sidebar-grid {
+        position: sticky;
+        top: 2rem;
     }
 }
