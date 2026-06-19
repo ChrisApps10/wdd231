@@ -896,3 +896,44 @@ body.dark-mode .confirmation-table th {
     background-color: var(--navbar-bg) !important;
     color: #38BDF8 !important;
 }
+
+#liveWeatherOutput,
+#forecastOutput {
+    padding: 1.25rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-size: 1.1rem !important;
+    font-family: var(--main-font);
+    box-sizing: border-box;
+}
+
+#liveWeatherOutput > div:first-child {
+    margin-bottom: 0.5rem;
+}
+
+#liveWeatherOutput div[style*="font-size:1.5rem"] {
+    font-size: 2.2rem !important;
+    font-family: var(--heading-font);
+    font-weight: 900;
+}
+
+#liveWeatherOutput div[style*="text-transform:capitalize"] {
+    font-size: 1.05rem;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+#forecastOutput div {
+    font-size: 1.1rem !important;
+    padding: 0.6rem 0 !important;
+    border-bottom: none !important;
+}
+
+#forecastOutput div:last-child {
+    border-bottom: none;
+}
+
+body.dark-mode #forecastOutput div {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
