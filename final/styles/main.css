@@ -543,8 +543,9 @@ body.dark-mode .event-date,
 .layout-toggle-wrapper {
     margin-top: 1.25rem;
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 .view-btn {
@@ -936,4 +937,26 @@ body.dark-mode .confirmation-table th {
 
 body.dark-mode #forecastOutput div {
     border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.layout-toggle-wrapper .filter-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+.layout-toggle-wrapper .view-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+}
+
+.btn-icon-spacing {
+    position: static !important;
+    transform: none !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
 }

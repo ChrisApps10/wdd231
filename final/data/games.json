@@ -8,7 +8,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A+ Mint",
       "hardwareSpecs": "100V power unit. Requires step-down transformer for safety. Pristine optical disc drive assembly.",
-      "image": "C1.jpg"
+      "image": "console-1.jpg"
     },
     {
       "id": "g02",
@@ -18,7 +18,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B+ Very Good",
       "hardwareSpecs": "Original motherboard. Native RF/AV out. Requires Japanese 100V AC adapter or verified local alternative.",
-      "image": "C2.jpg"
+      "image": "console-2.jpg"
     },
     {
       "id": "g03",
@@ -28,7 +28,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Fully recapped internal sound boards. Laser calibrated. Runs HuCards and CD-ROM² formats flawlessly.",
-      "image": "C3.jpeg"
+      "image": "console-3.jpg"
     },
     {
       "id": "g04",
@@ -38,7 +38,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B Minor Wear",
       "hardwareSpecs": "Translucent casing. Clean jumper pak port. Works natively on local CRT screens supporting NTSC format.",
-      "image": "C4.jpg"
+      "image": "console-4.jpg"
     },
     {
       "id": "g05",
@@ -48,7 +48,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A+ Mint",
       "hardwareSpecs": "Limited transparent pink shell variant. GD-ROM drive unit tested. Includes matching controller block.",
-      "image": "C5.jpg"
+      "image": "console-5.jpg"
     },
     {
       "id": "g06",
@@ -58,7 +58,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Boxed with complete foldout maps. Retains factory internal battery reading holding stable voltage saves.",
-      "image": "G1.jpg"
+      "image": "game-1.jpg"
     },
     {
       "id": "g07",
@@ -68,7 +68,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B+ Very Good",
       "hardwareSpecs": "Includes rare bonus art book insert. Disc mirror surface holds clean data tracks without scratch rings.",
-      "image": "G2.jpg"
+      "image": "game-2.jpg"
     },
     {
       "id": "g08",
@@ -78,7 +78,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B Standard",
       "hardwareSpecs": "Authentic cartridge board. Label surface text displays no fading or moisture stains. Contacts cleaned.",
-      "image": "G3.jpg"
+      "image": "game-3.jpg"
     },
     {
       "id": "g09",
@@ -88,7 +88,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Hideo Kojima signature edition packaging. Multi-disc set verified clean via hardware sector checks.",
-      "image": "G4.jpg"
+      "image": "game-4.jpg"
     },
     {
       "id": "g10",
@@ -98,7 +98,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "C Fair Display",
       "hardwareSpecs": "Box exhibits shelf edges softening. Internal manual completely intact. Cartridge contacts treated.",
-      "image": "G5.jpg"
+      "image": "game-5.jpg"
     },
     {
       "id": "g11",
@@ -108,7 +108,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B+ Very Good",
       "hardwareSpecs": "Heavy metal base plate configuration. Microswitches hold firm tactile response clicks. Native link logic.",
-      "image": "A1.jpg"
+      "image": "accessory-1.jpg"
     },
     {
       "id": "g12",
@@ -118,7 +118,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "B Repaired",
       "hardwareSpecs": "Drive mechanical belt fully replaced. Head tracking calibrated. Powered via C-cells or custom AC lines.",
-      "image": "A2.jpg"
+      "image": "accessory-2.jpg"
     },
     {
       "id": "g13",
@@ -128,7 +128,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Turbo function slide gates responsive. Standard controller connector wire pristine with no line cuts.",
-      "image": "A3.jpg"
+      "image": "accessory-3.jpg"
     },
     {
       "id": "g14",
@@ -138,7 +138,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A+ Mint",
       "hardwareSpecs": "Features native clock hardware fix and link cable port extension socket. Clean PCB board pathways.",
-      "image": "A4.jpg"
+      "image": "accessory-4.jpg"
     },
     {
       "id": "g15",
@@ -148,7 +148,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Dual player layout housing genuine Seimitsu lever switches. Heavy desktop footprint chassis profile.",
-      "image": "A5.jpg"
+      "image": "accessory-5.jpg"
     },
     {
       "id": "g16",
@@ -158,7 +158,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A+ Mint",
       "hardwareSpecs": "Collector edition box holding dog-tags, soundtrack CD disk, and specialized metallic foil artwork booklet.",
-      "image": "G6.jpg"
+      "image": "game-6.jpg"
     },
     {
       "id": "g17",
@@ -168,7 +168,7 @@
       "region": "NTSC-J (Japan)",
       "collectibleGrade": "A Excellent",
       "hardwareSpecs": "Highly sought TFT screen model variant. No dead matrix lines. Battery hatch holds locking tabs clean.",
-      "image": "C6.jpg"
+      "image": "console-6.jpg"
     }
   ]
 }
