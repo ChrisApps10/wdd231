@@ -388,24 +388,28 @@ body.dark-mode .card-text-details h3,
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.card-branding-shield {
-    background-color: #CBD5E1;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #94A3B8;
-    color: #1B3352 !important;
+.business-card-item .card-branding-shield {
+    background-color: #CBD5E1 !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #94A3B8 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 0.5rem !important;
+    box-sizing: border-box !important;
 }
 
-.logo-fallback-svg {
-    width: 100% !important;
-    height: 100% !important;
+.business-card-item .logo-fallback-svg {
     max-width: 100% !important;
     max-height: 100% !important;
-    object-fit: cover !important;
-    display: block;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0 !important;
 }
 
 .card-text-details {
