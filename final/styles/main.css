@@ -298,19 +298,6 @@ body.dark-mode .card-text-details h3,
     min-height: 200px;
 }
 
-.view-btn.active-view {
-    background-color: #1B3352 !important;
-    color: #FFFFFF !important;
-    border: 2px solid #1B3352;
-    padding: 0.6rem 1.4rem;
-    font-family: var(--main-font);
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
 .home-info-wrapper {
     display: flex;
     flex-direction: column;
@@ -425,18 +412,6 @@ body.dark-mode .card-text-details h3,
     text-align: center;
     font-size: 1.3rem;
     color: var(--accent-color);
-}
-
-.tagline-phrase {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.88rem;
-    opacity: 0.8;
-    margin: 0 0 0.5rem 0;
-}
-
-.info-row-detail {
-    margin: 0;
 }
 
 .card-redirect-anchor {
@@ -569,11 +544,6 @@ body.dark-mode .event-date,
 .view-btn.active-view {
     background-color: var(--primary-color);
     color: #FFFFFF !important;
-}
-
-.btn-icon-spacing {
-    width: 16px;
-    height: 16px;
 }
 
 #directoryDisplay {
