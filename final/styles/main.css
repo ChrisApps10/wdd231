@@ -877,3 +877,22 @@ body.dark-mode .close-modal-btn {
     background-color: #38BDF8 !important;
     color: var(--surface-bg) !important;
 }
+
+.confirmation-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 1.5rem auto !important;
+}
+
+.confirmation-table th {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+body.dark-mode .confirmation-table th {
+    background-color: var(--navbar-bg) !important;
+    color: #38BDF8 !important;
+}
