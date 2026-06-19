@@ -234,4 +234,61 @@
     .meta-left, .meta-right {
         text-align: center;
     }
+
+    #directoryDisplay.grid-layout-style {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #directoryDisplay.list-layout-style {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+    }
+
+    #directoryDisplay.list-layout-style .business-card-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 1.5rem;
+    }
+
+    #directoryDisplay.list-layout-style .card-branding-shield {
+        display: none !important;
+    }
+
+    #directoryDisplay.list-layout-style .card-text-details {
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #directoryDisplay.list-layout-style .card-text-details h3 {
+        margin: 0;
+        flex: 1 1 200px;
+    }
+
+    #directoryDisplay.list-layout-style .tagline-phrase {
+        display: none;
+    }
+
+    #directoryDisplay.list-layout-style .card-divider {
+        display: none;
+    }
+
+    #directoryDisplay.list-layout-style .info-row-detail {
+        margin: 0;
+        flex: 1 1 150px;
+    }
 }

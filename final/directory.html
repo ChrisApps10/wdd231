@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Akina - Japanese Import Gaming Directory</title>
+    <title>Retro Akina - Japanese Import Catalog</title>
     <meta name="description" content="Explore rare vintage Japanese video games, import hardware, and accessories at Retro Akina. Your premium digital catalog for collectible gaming artifacts.">
     <meta name="author" content="Chris Aparicio">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Retro Akina - Japanese Import Gaming Hub">
     <meta property="og:description" content="Your high-performance catalog for authentic vintage Japanese gaming hardware, collectible software grading specs, and regional compatibility guides.">
-    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
-    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/directory.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 600px)">
-    <script src="scripts/index.js" defer></script>
+    <script src="scripts/directory.js" defer type="module"></script>
 </head>
 <body>
     <header>
@@ -66,45 +66,65 @@
             </ul>
         </nav>
     </header>
-    <main class="home-main-content">
-        <h1 class="page-main-title">Home</h1>
-        <section class="home-hero-banner">
-            <div class="hero-cta-box">
-                <a href="directory.html" class="view-btn active-view">Browse Catalog</a>
+    <main>
+        <section class="directory-control-bar">
+            <h1>Hardware & Software Catalog</h1>
+            <p>Explore verified source lots, premium regional hardware variants, and collectible software artifacts.</p>
+            <div class="layout-toggle-wrapper" style="flex-direction: column; gap: 1rem; align-items: center;">
+                <div class="filter-buttons" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                    <button id="filterAll" class="view-btn active-view">All</button>
+                    <button id="filterConsoles" class="view-btn">Consoles</button>
+                    <button id="filterGames" class="view-btn">Games</button>
+                    <button id="filterAccessories" class="view-btn">Accessories</button>
+                </div>
+                <div class="view-buttons" style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <button id="gridBtn" class="view-btn active-view" aria-label="Switch display window layout to grid view cards">
+                        <svg class="icon-svg-ui btn-icon-spacing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: static; transform: none; display: inline-block; vertical-align: middle;">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Grid View</span>
+                    </button>
+                    <button id="listBtn" class="view-btn" aria-label="Switch display window layout to uniform single column list view">
+                        <svg class="icon-svg-ui btn-icon-spacing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: static; transform: none; display: inline-block; vertical-align: middle;">
+                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <span>List View</span>
+                    </button>
+                </div>
             </div>
         </section>
-        <div class="home-info-wrapper">
-            <section class="home-events-section">
-                <h2>Marketplace Drops</h2>
-                <div class="event-item">
-                    <span class="event-date">June 25 | 09:00 AM</span>
-                    <h3>Sega Custom Cabinet Stock Event</h3>
-                    <p>Rare Astro City setups and replacement control gates arrival.</p>
-                </div>
-                <div class="event-item">
-                    <span class="event-date">July 02 | 14:00 PM</span>
-                    <h3>Unreleased Super Famicom Prototype Auction</h3>
-                    <p>Live inventory stream containing verified source hardware lots.</p>
-                </div>
-            </section>           
-            <section class="home-weather-section">
-                <h2>LA Hub Conditions</h2>
-                <div id="liveWeatherOutput">
-                    <p>Loading weather data...</p>
-                </div>
-            </section>      
-            <section class="home-forecast-section">
-                <h2>Transit Horizon Forecast</h2>
-                <div id="forecastOutput">
-                    <p>Loading forecast horizon....</p>
-                </div>
-            </section>
-        </div> 
-        <section class="home-spotlights-section">
-            <h2 class="section-subtitle">Curated Showroom Spotlights</h2>
-            <div id="dynamicSpotlightGrid"></div>
-        </section>
+        <div id="directoryDisplay" class="grid-layout-style"></div>
+        <div class="audit-preload-container">
+            <img src="images/saturn-white.webp" alt="Sega Saturn White Console HST-3220 Validation Asset">
+            <img src="images/sufami-box.webp" alt="Super Famicom Boxed System Validation Asset">
+            <img src="images/pcengine-duo.webp" alt="PC Engine Duo-R Console Validation Asset">
+            <img src="images/n64-clear.webp" alt="Nintendo 64 Clear Blue Edition Validation Asset">
+            <img src="images/dreamcast-sakura.webp" alt="Sega Dreamcast Sakura Taisen Unit Validation Asset">
+            <img src="images/chrono-sfc.webp" alt="Chrono Trigger Super Famicom Game Validation Asset">
+            <img src="images/dracula-saturn.webp" alt="Akumajo Dracula X Sega Saturn Game Validation Asset">
+            <img src="images/smt-gb.webp" alt="Shin Megami Tensei Game Boy Game Validation Asset">
+            <img src="images/policenauts-3do.webp" alt="Policenauts Box Set 3DO Game Validation Asset">
+            <img src="images/ff6-sfc.webp" alt="Final Fantasy VI Super Famicom Game Validation Asset">
+            <img src="images/twin-stick.webp" alt="Sega Saturn Virtual On Twin Stick Accessory Validation Asset">
+            <img src="images/disk-system.webp" alt="Famicom Disk System Drive Unit Accessory Validation Asset">
+            <img src="images/ascii-stick.webp" alt="ASCII Fighting Stick PlayStation Accessory Validation Asset">
+            <img src="images/sgb2-adapter.webp" alt="Super Game Boy 2 Adapter Accessory Validation Asset">
+            <img src="images/arcade-panel.webp" alt="Sega Saturn HSS-0130 Arcade Panel Accessory Validation Asset">
+            <img src="images/mgs-premium.webp" alt="Metal Gear Solid Premium Package Game Validation Asset">
+            <img src="images/wswan-crystal.webp" alt="WonderSwan Crystal Blue Console Validation Asset">
+        </div>
     </main>
+    <dialog id="itemDetailsModal">
+        <div class="modal-wrapper">
+            <button id="closeModalBtn" aria-label="Close detailed information view window">&times;</button>
+            <div id="modalContentContainer"></div>
+        </div>
+    </dialog>
     <footer>
         <div class="footer-primary-row">
             <div class="contact-details-block">
