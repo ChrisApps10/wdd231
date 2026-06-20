@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Akina - Project Attributions</title>
-    <meta name="description" content="Resource citations, text definitions, and image asset attributions for the Retro Akina final project web application catalog.">
+    <meta name="description" content="Resource citations, text definitions, and external design image asset attributions for the Retro Akina final project web application catalog.">
     <meta name="author" content="Chris Aparicio">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Retro Akina - Project Resource Attributions">
+    <meta property="og:description" content="Formal documentation recording source origins, asset nodes, and layout variables used throughout development.">
     <meta property="og:image" content="https://chrisapps10.github.io/wdd231/chamber/attributions.html">
     <meta property="og:url" content="https://chrisapps10.github.io/wdd231/chamber/attributions.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +17,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 600px)">
 </head>
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body class="attributions-body-wrap">
     <header>
         <div class="header-container">
             <div class="branding-box">
@@ -28,40 +30,32 @@
         </div>
     </header>
 
-    <main style="flex: 1; padding: 2rem 1rem; max-width: 800px; margin: 0 auto; box-sizing: border-box; width: 100%;">
-        <h1 class="page-main-title" style="margin-top: 0 !important; text-align: center;">Resource Attributions</h1>
-        <p style="text-align: center; margin-bottom: 2.5rem; opacity: 0.9;">
+    <main class="thankyou-main-content">
+        <h1 class="thankyou-page-title">Resource Attributions</h1>
+        <p class="thankyou-summary-text">
             This page formally documents the source origins, assets, and design data used throughout the development of this website.
         </p>
 
-        <section style="margin-bottom: 2rem;">
+        <section class="attribution-data-block">
             <h2>Graphic Assets & Media</h2>
-            <ul style="line-height: 1.6; padding-left: 1.5rem;">
-                <li><strong>Hero Banner Illustration:</strong> Original display photography sourced from open media platforms.</li>
-                <li><strong>Product Inventory Thumbnails:</strong> Descriptive reference layout thumbnails of authentic vintage gaming systems cataloged through historical preservation channels.</li>
+            <ul>
+                <li><strong>Hero Banner Illustration:</strong> Display photography sourced from open media platforms.</li>
+                <li><strong>Product Inventory Thumbnails:</strong> Reference thumbnails of vintage gaming systems cataloged through preservation channels.</li>
                 <li><strong>System Icons:</strong> Vector elements generated inline using responsive coordinate mappings.</li>
             </ul>
         </section>
 
-        <section style="margin-bottom: 2rem;">
+        <section class="attribution-data-block">
             <h2>Data & Typography Sources</h2>
-            <ul style="line-height: 1.6; padding-left: 1.5rem;">
-                <li><strong>Inventory Database Parameters:</strong> Descriptive properties structured into `games.json` to meet development evaluation criteria.</li>
-                <li><strong>Typography Engines:</strong> Font vectors linked directly through the Google Fonts delivery pipeline.</li>
-                <li><strong>Live Meteorological Feeds:</strong> Climatic condition reports processed asynchronously via the OpenWeatherMap API channels.</li>
+            <ul>
+                <li><strong>Inventory Database Parameters:</strong> Descriptive properties structured into games.json to meet development criteria.</li>
+                <li><strong>Typography Engines:</strong> Font vectors linked directly through the Google Fonts pipeline.</li>
+                <li><strong>Live Meteorological Feeds:</strong> Climatic condition reports processed asynchronously via OpenWeatherMap API channels.</li>
             </ul>
         </section>
 
-        <section style="margin-bottom: 2rem;">
-            <h2>Development Framework References</h2>
-            <ul style="line-height: 1.6; padding-left: 1.5rem;">
-                <li><strong>Layout Structures:</strong> Created in strict alignment with standard frontend architectural paradigms and course guidelines.</li>
-                <li><strong>Component Modularity:</strong> Decoupled logic loops built around native JavaScript ES Module scripts.</li>
-            </ul>
-        </section>
-
-        <p style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="view-btn active-view" style="display: inline-block; text-decoration: none;">Return to Home Page</a>
+        <p class="return-action-row">
+            <a href="index.html" class="view-btn active-view">Return to Home Page</a>
         </p>
     </main>
 

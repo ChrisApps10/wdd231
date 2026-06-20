@@ -1109,3 +1109,18 @@ body.dark-mode .confirmation-table th {
     padding: 0.9rem 1.1rem !important;
     border-color: var(--border-color) !important;
 }
+
+.attributions-body-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.attribution-data-block {
+    margin-bottom: 2rem;
+}
+
+.attribution-data-block ul {
+    line-height: 1.6;
+    padding-left: 1.5rem;
+}
