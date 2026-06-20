@@ -2,48 +2,37 @@
     --primary-color: #801433;
     --accent-color: #2E3B4E;
     --highlight-color: #C89B3C;
-
     --border-color: #E2E8F0;
-
     --text-color: #111111;
     --text-muted: #475569;
-
     --surface-bg: #F9F8F6;
     --surface-card: #FFFFFF;
-
     --navbar-bg: #E2E8F0;
     --navbar-text: #2E3B4E;
     --navbar-hover: #CBD5E1;
-
     --section-header-bg: #2E3B4E;
     --section-header-text: #FFFFFF;
-
     --heading-font: 'Merriweather Sans', sans-serif;
     --main-font: 'Roboto', sans-serif;
-
     --transition-engine: 0.25s ease;
 }
 
 .dark-mode {
     --primary-color: #C94A6C;
-    --accent-color: #A5B4C8;
-    --highlight-color: #D4AF37;
-
+    --accent-color: #E2E8F0;
+    --highlight-color: #4A0B1A;
     --border-color: #475569;
-
     --text-color: #F8FAFC;
     --text-muted: #CBD5E1;
-
     --surface-bg: #121212;
     --surface-card: #1E293B;
-
     --navbar-bg: #1E293B;
     --navbar-text: #F8FAFC;
     --navbar-hover: #334155;
-
     --section-header-bg: #0F172A;
     --section-header-text: #FFFFFF;
 }
+
 
 body {
     font-family: var(--main-font);
@@ -201,17 +190,8 @@ body.dark-mode #themeToggle .icon-svg-ui,
 
 #navbar a.active,
 #navbar ul li a.active {
-    background-color: #2563EB !important;
+    background-color: #600E25 !important;
     color: #FFFFFF !important;
-    text-decoration: none !important;
-}
-
-body.dark-mode #navbar a.active,
-.dark-mode #navbar a.active,
-body.dark-mode #navbar ul li a.active,
-.dark-mode #navbar ul li a.active {
-    background-color: #38BDF8 !important;
-    color: #0F172A !important;
     text-decoration: none !important;
 }
 
@@ -226,18 +206,6 @@ body.dark-mode .business-card-item,
     background-color: #2A3A52 !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-}
-
-body.dark-mode .home-events-section h2,
-.dark-mode .home-events-section h2,
-body.dark-mode .home-weather-section h2,
-.dark-mode .home-weather-section h2,
-body.dark-mode .home-forecast-section h2,
-.dark-mode .home-forecast-section h2,
-body.dark-mode .home-spotlights-section h2,
-.dark-mode .home-spotlights-section h2 {
-    background-color: #1E293B !important;
-    color: #38BDF8 !important;
 }
 
 body.dark-mode .page-main-title,
@@ -256,11 +224,6 @@ body.dark-mode #forecastOutput,
 body.dark-mode .card-text-details,
 .dark-mode .card-text-details {
     color: #F8FAFC !important;
-}
-
-body.dark-mode .card-text-details h3,
-.dark-mode .card-text-details h3 {
-    color: #38BDF8 !important;
 }
 
 .page-main-title {
@@ -420,11 +383,6 @@ body.dark-mode .card-text-details h3,
     font-weight: 700;
 }
 
-body.dark-mode .card-redirect-anchor, 
-.dark-mode .card-redirect-anchor {
-    color: #38BDF8 !important;
-}
-
 footer {
     background-color: #0F1724;
     color: #F8FAFC;
@@ -492,11 +450,6 @@ footer {
     width: 0 !important;
     height: 0 !important;
     color: #000000 !important;
-}
-
-body.dark-mode .event-date,
-.dark-mode .event-date {
-    color: #38BDF8 !important;
 }
 
 .directory-control-bar {
@@ -640,27 +593,6 @@ dialog {
     align-items: center;
     background-color: rgba(0,0,0,0.05);
     border-radius: 4px;
-}
-
-body.dark-mode .directory-control-bar h1 {
-    color: #38BDF8 !important;
-}
-
-body.dark-mode .view-btn {
-    background-color: var(--surface-bg) !important;
-    color: #38BDF8 !important;
-    border-color: #38BDF8 !important;
-}
-
-body.dark-mode .view-btn.active-view {
-    background-color: #38BDF8 !important;
-    color: var(--surface-bg) !important;
-    border-color: #38BDF8 !important;
-}
-
-body.dark-mode .card-branding-shield {
-    background-color: #334155 !important;
-    color: #38BDF8 !important;
 }
 
 .join-main-content {
@@ -837,22 +769,6 @@ body.dark-mode .form-container-card fieldset {
     border-color: rgba(255,255,255,0.15) !important;
 }
 
-body.dark-mode .tier-card-item h2,
-body.dark-mode .modal-inner-content h2 {
-    color: #38BDF8 !important;
-}
-
-body.dark-mode .open-modal-btn {
-    border-color: #38BDF8 !important;
-    color: #38BDF8 !important;
-}
-
-body.dark-mode .form-submit-btn,
-body.dark-mode .close-modal-btn {
-    background-color: #38BDF8 !important;
-    color: var(--surface-bg) !important;
-}
-
 .confirmation-table {
     width: 100%;
     max-width: 600px;
@@ -865,11 +781,6 @@ body.dark-mode .close-modal-btn {
     color: #FFFFFF;
     font-family: var(--heading-font);
     font-weight: 700;
-}
-
-body.dark-mode .confirmation-table th {
-    background-color: var(--navbar-bg) !important;
-    color: #38BDF8 !important;
 }
 
 #liveWeatherOutput,
@@ -933,4 +844,295 @@ body.dark-mode #forecastOutput div {
     transform: none !important;
     display: inline-block !important;
     vertical-align: middle !important;
+}
+
+.thankyou-main-content {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.thankyou-page-title {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.thankyou-summary-text {
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.table-data-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.return-action-row {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.return-action-row .view-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#applicationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#applicationForm label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+#applicationForm input[type="text"],
+#applicationForm input[type="email"],
+#applicationForm input[type="tel"],
+#applicationForm textarea {
+    padding: 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 0.95rem;
+    background-color: var(--surface-bg);
+    color: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#applicationForm input:focus,
+#applicationForm textarea:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.form-submit-btn {
+    background-color: var(--primary-color);
+    color: #FFFFFF !important;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color var(--transition-engine);
+}
+
+.view-btn.active-view,
+.form-submit-btn,
+.close-modal-btn {
+    transition: background-color var(--transition-engine), 
+                transform var(--transition-engine), 
+                box-shadow var(--transition-engine);
+}
+
+.view-btn.active-view:hover,
+.form-submit-btn:hover,
+.close-modal-btn:hover {
+    background-color: #600E25 !important; 
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .view-btn.active-view:hover,
+body.dark-mode .form-submit-btn:hover,
+body.dark-mode .close-modal-btn:hover {
+    background-color: #4A0B1A !important; 
+    color: #FFFFFF !important;
+}
+
+.view-btn.active-view:focus,
+.view-btn.active-view:active,
+.form-submit-btn:focus,
+.close-modal-btn:focus {
+    outline: 2px solid var(--accent-color);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode #navbar a.active,
+.dark-mode #navbar a.active,
+body.dark-mode #navbar ul li a.active,
+.dark-mode #navbar ul li a.active {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .card-redirect-anchor,
+.dark-mode .card-redirect-anchor,
+body.dark-mode .inline-card-icon {
+    color: var(--accent-color) !important;
+}
+
+body.dark-mode .view-btn {
+    background-color: #1E293B !important;
+    color: #FFFFFF !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .view-btn.active-view {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    border-color: var(--primary-color) !important;
+}
+
+body.dark-mode .form-submit-btn,
+body.dark-mode .close-modal-btn {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .open-modal-btn {
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+body.dark-mode .open-modal-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.card-text-details h3 {
+    background: none !important;
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .card-text-details h3 {
+    background: none !important;
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .card-text-details {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.directory-control-bar,
+.home-events-section h2,
+.home-weather-section h2,
+.home-forecast-section h2,
+.home-spotlights-section h2,
+body.dark-mode .directory-control-bar,
+body.dark-mode .home-events-section h2,
+body.dark-mode .home-weather-section h2,
+body.dark-mode .home-forecast-section h2,
+body.dark-mode .home-spotlights-section h2 {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.directory-control-bar h1,
+body.dark-mode .directory-control-bar h1,
+.join-main-content h1,
+body.dark-mode .join-main-content h1,
+.thankyou-main-content h1,
+body.dark-mode .thankyou-main-content h1 {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.hero-cta-box .view-btn.active-view {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.home-events-section h2,
+.home-weather-section h2,
+.home-forecast-section h2,
+.home-spotlights-section h2 {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .home-events-section h2,
+body.dark-mode .home-weather-section h2,
+body.dark-mode .home-forecast-section h2,
+body.dark-mode .home-spotlights-section h2 {
+    color: var(--primary-color) !important;
+}
+
+.event-date {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .event-date {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .form-container-card .form-submit-btn,
+body.dark-mode #applicationForm .form-submit-btn {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.tier-card-item h2,
+body.dark-mode .tier-card-item h2 {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.modal-inner-content h2,
+body.dark-mode .modal-inner-content h2,
+dialog h2,
+body.dark-mode dialog h2 {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .home-events-section h2,
+body.dark-mode .home-weather-section h2,
+body.dark-mode .home-forecast-section h2,
+body.dark-mode .home-spotlights-section h2,
+body.dark-mode .directory-control-bar h1,
+body.dark-mode .tier-card-item h2,
+body.dark-mode .modal-inner-content h2,
+body.dark-mode .thankyou-page-title,
+body.dark-mode dialog h2 {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--primary-color) !important;
+}
+
+.confirmation-table th {
+    background-color: #600E25 !important;
+    color: #FFFFFF !important;
+    font-size: 1.1rem;
+}
+
+body.dark-mode .confirmation-table th {
+    background-color: #4A0B1A !important;
+    color: #FFFFFF !important;
+    font-size: 1.1rem;
+}
+
+.confirmation-table th,
+.confirmation-table td {
+    padding: 0.9rem 1.1rem !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .confirmation-table th {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    font-size: 1.1rem;
 }

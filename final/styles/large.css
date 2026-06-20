@@ -101,14 +101,8 @@
         border-bottom: 1px solid rgba(222, 227, 232, 0.1);
         border-top: none;
         transition: color 0.2s ease;
-        background-color: #2563EB !important;
+        background-color: #600E25 !important;
         color: #FFFFFF;
-    }
-
-    body.dark-mode #navbar a.active,
-    .dark-mode #navbar a.active {
-        background-color: #38BDF8 !important;
-        color: #0F172A !important;
     }
 
     .home-hero-banner,
@@ -168,16 +162,6 @@
 
     .card-branding-shield {
         height: 120px;
-    }
-
-    body.dark-mode .home-events-section h2,
-    .dark-mode .home-events-section h2,
-    body.dark-mode .home-weather-section h2,
-    .dark-mode .home-weather-section h2,
-    body.dark-mode .home-forecast-section h2,
-    .dark-mode .home-forecast-section h2 {
-        background-color: #1E293B !important;
-        color: #38BDF8 !important;
     }
 
     footer {
